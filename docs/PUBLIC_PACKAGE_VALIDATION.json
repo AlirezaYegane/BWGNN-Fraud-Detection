@@ -4,16 +4,29 @@
   "platform": "Linux",
   "checks": [
     "Python 3.8 syntax",
+    "Original replication: ten-run Amazon log, 15 seeded trajectories, validation-only selection and four population-SD summaries",
     "75 core + 35 sensitivity + 18 new construction fits; nine reused references are not double counted",
     "All four metric means and sample SDs recomputed from published per-fit tables",
     "Amazon paired gaps recomputed from per-seed scores",
     "Three raw Gemini responses, request/input hashes, 72 ratings, citations and agreement re-audited"
   ],
   "distinct_extension_fits_in_tables": 128,
+  "replication_records": {
+    "status": "passed",
+    "source_files": 31,
+    "original_unseeded_runs": 10,
+    "seeded_trajectories": 15,
+    "selection_rows": 55,
+    "summary_rows": 4,
+    "scope": "Historical log, validation selection and aggregate consistency; no private prediction or checkpoint execution."
+  },
   "scientific_retraining": false,
   "network_requests": 0,
   "checked_sources_sha256": {
-    "verify_public_results.py": "4ab90288d7800dd2ab22691f7dd1168ca70445ea6ae84fbab41d3b74ffc9c36d",
+    "verify_public_results.py": "ea7154fc5126cec519ec08c923c3ac1a683ec85d73d1365139d330fffedd563d",
+    "verify_replication.py": "d7b784fb7ea64a9286c067187d433d975c5c7fefe179ae2d5e60bbae11682d10",
+    "results/replication/source_manifest.json": "085b20b40e686a499650274fc2fe434e11ce8a9094d9fe0fbcf926a02e0ae054",
+    "results/replication/per_run_results.csv": "23c7199c305abf4c58b3713c0093b9c6efb74f0dcd33e2d627eb078e4d76c06c",
     "results/comp8240_a3_core_analysis/all_model_results.csv": "230b8a80978d1f99b8f597e22658cc5dd0880c0eeab423b454d8d2251412b5be",
     "results/comp8240_a3_sensitivity_analysis/sensitivity_results.csv": "8353adb43cd77790cb2ac9dbaea36a8bca7bfb11e0019320aa0926f90d59605d",
     "results/comp8240_a3_sampling_analysis/sampling_results.csv": "74765dc0b8d39bd19118ed0d0e53d5aefe1c6b77c139951e5f1a3da6815d2c3b"

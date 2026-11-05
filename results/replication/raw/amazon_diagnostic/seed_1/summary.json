@@ -1,0 +1,68 @@
+{
+  "seed": 1,
+  "observed_epochs": 100,
+  "split_hashes": {
+    "train_ids": "08469961fb7d2cb8277e1f6d7e3cbb7d344a89036e5774c227eb5fcbbe2d008a",
+    "validation_ids": "2b1d8b3ef7712e21424e0fe6ad8784e3edc486f4a00f5a232324a7e1ef1eacaf",
+    "test_ids": "ca5b60051bc3e0785e71c352b966a9903083fa7a6d44ae8243a0453eb49e78c6"
+  },
+  "selections": {
+    "val_macro_f1": {
+      "epoch_zero_based": 89,
+      "val_macro_f1": 0.921771034645418,
+      "threshold": 0.7,
+      "test_macro_f1": 0.9157166926512443,
+      "selected_by_original_val_f1": true,
+      "val_auc_prob32": 0.9785137273408655,
+      "val_auc_margin64": 0.9785137273408655,
+      "val_prob_exact_zero_count": 0,
+      "val_prob_exact_one_count": 2,
+      "val_unique_probability_count": 1708,
+      "val_unique_margin_count": 1710,
+      "test_auc_prob32": 0.9808755493869998,
+      "test_auc_margin64": 0.9808755493869998,
+      "test_prob_exact_zero_count": 0,
+      "test_prob_exact_one_count": 4,
+      "test_unique_probability_count": 3470,
+      "test_unique_margin_count": 3474
+    },
+    "val_auc_prob32": {
+      "epoch_zero_based": 98,
+      "val_macro_f1": 0.9211472839620032,
+      "threshold": 0.7,
+      "test_macro_f1": 0.9175704092254686,
+      "selected_by_original_val_f1": false,
+      "val_auc_prob32": 0.9806314219883329,
+      "val_auc_margin64": 0.9806314219883329,
+      "val_prob_exact_zero_count": 0,
+      "val_prob_exact_one_count": 5,
+      "val_unique_probability_count": 1704,
+      "val_unique_margin_count": 1710,
+      "test_auc_prob32": 0.982112633973321,
+      "test_auc_margin64": 0.9821140797285836,
+      "test_prob_exact_zero_count": 0,
+      "test_prob_exact_one_count": 7,
+      "test_unique_probability_count": 3464,
+      "test_unique_margin_count": 3474
+    },
+    "val_auc_margin64": {
+      "epoch_zero_based": 98,
+      "val_macro_f1": 0.9211472839620032,
+      "threshold": 0.7,
+      "test_macro_f1": 0.9175704092254686,
+      "selected_by_original_val_f1": false,
+      "val_auc_prob32": 0.9806314219883329,
+      "val_auc_margin64": 0.9806314219883329,
+      "val_prob_exact_zero_count": 0,
+      "val_prob_exact_one_count": 5,
+      "val_unique_probability_count": 1704,
+      "val_unique_margin_count": 1710,
+      "test_auc_prob32": 0.982112633973321,
+      "test_auc_margin64": 0.9821140797285836,
+      "test_prob_exact_zero_count": 0,
+      "test_prob_exact_one_count": 7,
+      "test_unique_probability_count": 3464,
+      "test_unique_margin_count": 3474
+    }
+  }
+}

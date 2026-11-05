@@ -33,7 +33,7 @@ The original files are never patched. Run scientific scripts from the project di
 
 ## Marker quick checks
 
-A standard-library-only public check is available before installing the ML stack or downloading upstream code: `python verify_public_results.py`. It checks the published per-fit/aggregate tables and byte-exact raw judge evidence, not private classifier prediction arrays. See [MARKER_GUIDE.md](MARKER_GUIDE.md) for the separate verification levels.
+A standard-library-only public check is available before installing the ML stack or downloading upstream code: `python verify_public_results.py`. It checks the published per-fit/aggregate tables, byte-exact raw judge evidence, and original replication logs/validation selections. It does not check private classifier prediction arrays. See [MARKER_GUIDE.md](MARKER_GUIDE.md) for the separate verification levels.
 
 ```powershell
 python verify_submission.py --runtime
@@ -79,7 +79,7 @@ This changes matched negative selection and sampled context, and may change root
 
 ## Secondary explanation evaluation
 
-Completed on 5 November 2026 using the three frozen prompts, independent single-turn Gemini 3.6 Flash API calls and the recorded bounded-overload retry policy. All 72 ratings and their raw responses are in `results/explanation_judge/`. The independent audit checks source/input/output fingerprints, case-specific citations, distinct prompt orders and response IDs, exact agreement and Cohen kappa. All four frozen casepack/prompt files also match regeneration from the primary saved Ethereum predictions and dataset.
+Completed on 5 November 2026 using the three frozen prompts, independent single-turn Gemini 3.6 Flash API calls and the recorded bounded-overload retry policy. All 72 ratings and their raw responses are in `results/explanation_judge/`. The separate audit script checks source/input/output fingerprints, case-specific citations, distinct prompt orders and response IDs, exact agreement and Cohen kappa. All four frozen casepack/prompt files also match regeneration from the primary saved Ethereum predictions and dataset.
 
 Each run gives eight supported descriptive texts, eight partly_supported attribution controls and eight speculative intent controls. Every pair of runs agrees on all 24 texts (kappa1.00). Read `results/explanation_judge/JUDGE_RESULTS_REVIEW.md` for limits: eight cases, simple rule-written templates, one model, repeated dependent judgments, no causal explanation faithfulness or classifier-accuracy claim. The earlier author-review draft was AI-assisted; no independent human–LLM agreement is reported.
 
@@ -101,7 +101,7 @@ python results/explanation_judge/audit_judge_evidence.py --evidence "PATH_TO_GEM
 
 The public project repository is https://github.com/AlirezaYegane/BWGNN-Fraud-Detection. The final ACL report is prepared separately and references this repository. Keep raw addresses, credentials, full data arrays, model checkpoints and local runtime evidence out of ordinary Git commits; use the documented data-access path.
 
-The final report has not been written in this package. AI-assisted code/document preparation and the actual LLM judging should be disclosed accurately according to the unit instructions. Student review and responsibility remain necessary; no grade is guaranteed by a runnable repository.
+The final ACL report is prepared as a separate deliverable and was revised after independent review. It discloses AI-assisted code/document preparation and the actual LLM judging. Unit-specific ethics resources and later lecturer clarifications remain to be checked; I take responsibility for the submitted work. No grade is guaranteed by a runnable repository.
 
 To run the software workflow tests without full training:
 
@@ -123,4 +123,10 @@ The baseline dataset option adds overlap comparisons against construction0; its 
 
 `gemini_api/run_gemini_judge.py` and `gemini_api/recovery/` are the actual executed runner and TLS/overload recovery code. They preserve frozen inputs and save full responses, usage and hashes. Successful execution is already complete; no further API requests are needed. Its original README describes the pre-execution state; the completed result review and evidence supersede that status.
 
-`openai_api/` records an attempted alternative after Gemini overload. The user's OpenAI request returned credit_balance_exhausted and produced no judgment. The user declined paid API credit and returned to the verified Gemini Free Tier project. GPT-5.4 is not the source of the reported judge results. Its offline software checks are not study findings. Preserve the failed OpenAI evidence separately if available; it was not supplied in the completed Gemini ZIP.
+`openai_api/` records an attempted alternative after Gemini overload. My OpenAI request returned credit_balance_exhausted and produced no judgment. I declined paid API credit and returned to the verified Gemini Free Tier project. GPT-5.4 is not the source of the reported judge results. Its offline software checks are not study findings. Preserve the failed OpenAI evidence separately if available; it was not supplied in the completed Gemini ZIP.
+
+## Public original-replication records
+
+`results/replication/` preserves the ten-run Amazon log and the 15 seeded summary/epoch record pairs. `python verify_replication.py` verifies all 31 original-file fingerprints, first-best validation selections, the 55 derived selection rows and four population-SD summaries. Those selectors reuse the same trajectories. They are separate from the 128 extension fits. Original ten-run prediction arrays were not retained; seeded selected-score arrays remain local.
+
+The Gemini evidence is per-case de-identified feature, degree and prediction information, not guaranteed anonymous aggregate data. Temperature was omitted in the recorded requests. The unsuccessful OpenAI route is an additional attempted external disclosure, with no GPT judgments; its original raw error ZIP was not supplied with the successful Gemini evidence.

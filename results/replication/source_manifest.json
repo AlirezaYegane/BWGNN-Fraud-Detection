@@ -1,0 +1,191 @@
+{
+  "scope": "Byte-exact historical log and seeded epoch/summary records. Scores are not newly generated.",
+  "files": [
+    {
+      "path": "raw/amazon_original_10runs.log",
+      "sha256": "32482537775ab252628673d63f1f56e2e1ae4b2876f7ca00ced772c3d3a66c92",
+      "bytes": 120308,
+      "original_member": "amazon_40_bwgnn_10runs.log"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_0/summary.json",
+      "sha256": "1defc7f5a61cd6f6a14a93b9406bb7a58c652637cc2ab48eae16975837f77c02",
+      "bytes": 2594,
+      "original_member": "amazon_homo1_20261007T155634_620255Z\\seed_0\\summary.json"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_0/epochs.csv",
+      "sha256": "c44e47ce32d34e87c0041a8c466281c73e33cb903023618a19e72e1ebbcd9b6e",
+      "bytes": 16183,
+      "original_member": "amazon_homo1_20261007T155634_620255Z\\seed_0\\epochs.csv"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_1/summary.json",
+      "sha256": "d7ce1c1cb87b824bde3be0909a8d8f577b6cb9e81c623bec2a7c4293a8c54d0a",
+      "bytes": 2556,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_1\\summary.json"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_1/epochs.csv",
+      "sha256": "a58386b1e5a308a1bf4b661ec0d30c23a9b6fe54300b4442075cdf3c0b1a3cfe",
+      "bytes": 16193,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_1\\epochs.csv"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_2/summary.json",
+      "sha256": "4cab5aa30fd078de3ca6e28e1eee67834f81ba208d9ad376a8fb42e32c43c42a",
+      "bytes": 2575,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_2\\summary.json"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_2/epochs.csv",
+      "sha256": "6ea3fd5a48583e38291f4f8bc2b0bcc527fe7094d257a2bb7e1b73147eabdce5",
+      "bytes": 16170,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_2\\epochs.csv"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_3/summary.json",
+      "sha256": "9bd7d09c6cf890854776b332236275d65f58677b3b17f99f6fb16c3a76ef9007",
+      "bytes": 2571,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_3\\summary.json"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_3/epochs.csv",
+      "sha256": "86e631dba56033706603e36ad3a7dad3cca4b991d94517b72d6d53c19e69e068",
+      "bytes": 16157,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_3\\epochs.csv"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_4/summary.json",
+      "sha256": "4b8936dbc74f44174b583cd532cdac67231c8b14052cd2ecf444dd11d7b07751",
+      "bytes": 2605,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_4\\summary.json"
+    },
+    {
+      "path": "raw/amazon_diagnostic/seed_4/epochs.csv",
+      "sha256": "568bbbbc45d2661a6a8e54e5ba465dc3d833cdfb0e411d76b0ea9809f97ff5a5",
+      "bytes": 16281,
+      "original_member": "amazon_followup_20261008_212338\\amazon_homo1_20261008T102343_144557Z\\seed_4\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_0/summary.json",
+      "sha256": "f9e0160f64a15508b0a4b9c976594f4c495800ac6703f6dd56d94cd7c854e8f8",
+      "bytes": 2572,
+      "original_member": "yelp_homo0_20261008T103633_859928Z\\seed_0\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_0/epochs.csv",
+      "sha256": "8089e324dd1204c733603367aeaf5d34d2450e163b4612735c57518c32c85d88",
+      "bytes": 16872,
+      "original_member": "yelp_homo0_20261008T103633_859928Z\\seed_0\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_1/summary.json",
+      "sha256": "19ad114739b0707391cf5b15fe2f9ead25a1f0c2da1ae9b17d3e996864b46ced",
+      "bytes": 2586,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_1\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_1/epochs.csv",
+      "sha256": "6f61b4f642411fb3c01aa78a4722742d91a52f880a05e65104a01ea63daedf42",
+      "bytes": 17031,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_1\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_2/summary.json",
+      "sha256": "3c2329ee8b38d3093bcf438822470705b87570a00d208cb03cbc4b3a94caceea",
+      "bytes": 2582,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_2\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_2/epochs.csv",
+      "sha256": "12c0c0597cc342226dffa3fc6ef7453dd03d4bd5da91d9c56d08ca822d7d1457",
+      "bytes": 17033,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_2\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_3/summary.json",
+      "sha256": "e3e55e6b22fc3f00a185ac75d1ab44c81797195ea0a0443257bc402aad7dbf2f",
+      "bytes": 2601,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_3\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_3/epochs.csv",
+      "sha256": "af4957d538e45d3a9f63abdb0d587ff85bf40114edc961a09851bf66cc5f306f",
+      "bytes": 16931,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_3\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_4/summary.json",
+      "sha256": "2d3453a46c281e257d202291a286317541cce65f1096f23b762af53a1f611666",
+      "bytes": 2569,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_4\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_4/epochs.csv",
+      "sha256": "35bbe7f0642909c17edaecbc2451bd40257cb1f26f57a800cbe47021c729170d",
+      "bytes": 16882,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_4\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_5/summary.json",
+      "sha256": "a355eeb5c5a0635eceddf7aff352cbf41ae85f72bda4238733760d322464ccdd",
+      "bytes": 2583,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_5\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_5/epochs.csv",
+      "sha256": "20ee18a44eee0051731edd420e2072c8acc08a5526e696697502e12762675b69",
+      "bytes": 16953,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_5\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_6/summary.json",
+      "sha256": "637177b7143ebc6b2c87455d2840591f370c99f6e75cea25dfb322d877c4fc65",
+      "bytes": 2593,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_6\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_6/epochs.csv",
+      "sha256": "2164902ffdd6e2368a637966fd61d43539abfae83b20f5c1476c0ea3819245e8",
+      "bytes": 16931,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_6\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_7/summary.json",
+      "sha256": "dd457c8f7bcf474c6c6b7821b72193bad25247cf06cbebfde94333b2f739eb8d",
+      "bytes": 2570,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_7\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_7/epochs.csv",
+      "sha256": "8db2eb17a1156353fbefe41b6a6af35df4b1c41f40014d37d34869eeb3060ab7",
+      "bytes": 16977,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_7\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_8/summary.json",
+      "sha256": "85b2a06171097f601a8b7fcf508e0b65183cb691b91a4e8039ff4fc940d4bcc9",
+      "bytes": 2584,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_8\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_8/epochs.csv",
+      "sha256": "8b4ef7dc678da24d925c52fa556c106c66b203dd9877b36e9260c265e2a67a57",
+      "bytes": 16755,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_8\\epochs.csv"
+    },
+    {
+      "path": "raw/yelp_replication/seed_9/summary.json",
+      "sha256": "a5968db83969e8809cc1d1fd924273ec3256c6e7e8a4ec89a34383bbed6da827",
+      "bytes": 2570,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_9\\summary.json"
+    },
+    {
+      "path": "raw/yelp_replication/seed_9/epochs.csv",
+      "sha256": "9408ed52a9c26328707d4a6dc3eaba4b66f0d2bbf6ec82640e2c68411d44758b",
+      "bytes": 16699,
+      "original_member": "yelp_followup_20261008_214346\\yelp_homo0_20261008T104349_130559Z\\seed_9\\epochs.csv"
+    }
+  ]
+}

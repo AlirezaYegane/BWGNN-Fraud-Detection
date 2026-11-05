@@ -61,6 +61,9 @@ def verify(root):
         if not any(part.startswith('.') or part == '__pycache__' for part in path.relative_to(root).parts):
             ast.parse(path.read_text(encoding='utf-8-sig'), feature_version=(3, 8))
     checks.append('Python 3.8 syntax')
+    from verify_replication import verify_records
+    replication = verify_records(root)
+    checks.append('Original replication: ten-run Amazon log, 15 seeded trajectories, validation-only selection and four population-SD summaries')
     core_dir = root / 'results/comp8240_a3_core_analysis'
     sens_dir = root / 'results/comp8240_a3_sensitivity_analysis'
     sample_dir = root / 'results/comp8240_a3_sampling_analysis'
@@ -118,10 +121,13 @@ def verify(root):
         for name in ['all_ratings_audited.csv', 'construction_map_after_judging.csv', 'ratings_by_construction.csv', 'pairwise_judge_agreement.csv']:
             require(read_csv(judge_dir / name) == read_csv(temporary / 'audit' / name), 'Published judge table differs: ' + name)
     checks.append('Three raw Gemini responses, request/input hashes, 72 ratings, citations and agreement re-audited')
-    checked_paths = [root / 'verify_public_results.py', core_dir / 'all_model_results.csv',
+    checked_paths = [root / 'verify_public_results.py', root / 'verify_replication.py',
+                     root / 'results/replication/source_manifest.json', root / 'results/replication/per_run_results.csv',
+                     core_dir / 'all_model_results.csv',
                      sens_dir / 'sensitivity_results.csv', sample_dir / 'sampling_results.csv']
     return {'status': 'passed', 'python': platform.python_version(), 'platform': platform.system(),
             'checks': checks, 'distinct_extension_fits_in_tables': 128,
+            'replication_records': replication,
             'scientific_retraining': False, 'network_requests': 0,
             'checked_sources_sha256': {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in checked_paths},
             'scope': 'Published-table consistency and raw judge evidence. No re-execution of model checkpoints or recomputation from private prediction arrays.'}

@@ -19,3 +19,7 @@ There are 24 unique rule-written texts from eight cases and three repeated judgm
 ## Historical combined human/LLM analyser
 
 `analyse_explanation_study.py` remains available for the originally planned protocol when genuinely completed human ratings and metadata are supplied. Its software tests use synthetic fixtures. Neither those fixtures nor empty templates are findings. That historical analyser was not used to manufacture human comparisons for the completed Gemini pilot. Do not fill missing human ratings with generated text or retrospectively label them independent.
+
+## What left the local environment
+
+The frozen pack contains per-case de-identified degree statistics, selected standardised features and model scores. It excludes addresses and true fraud labels, but linkage to the released graph may remain possible. These are not aggregate-only or guaranteed anonymous records. Temperature is not specified in the API requests; the response schema restricts ratings to the three stated categories. I also attempted the same study through the OpenAI runner; quota exhaustion returned no judgment, and the original raw failure ZIP is not included. The submitted report states these limits.

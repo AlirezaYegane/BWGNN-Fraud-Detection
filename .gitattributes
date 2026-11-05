@@ -10,3 +10,6 @@
 
 # Frozen API evidence uses byte-exact hashes; never normalize its line endings.
 results/explanation_judge/evidence/** -text
+
+# Historical replication records also have byte-exact source fingerprints.
+results/replication/raw/** -text

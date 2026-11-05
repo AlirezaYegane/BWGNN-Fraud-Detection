@@ -10,7 +10,7 @@ With Python 3.8 or later, using only its standard library:
 python verify_public_results.py --output validation_receipt_public_local.json
 ```
 
-This checks Python 3.8 syntax, complete seed inventories, all four metric means/sample SDs against the published per-fit tables, the nine reused construction references, Amazon paired gaps, and all three raw Gemini responses and their recorded hashes/citations/ratings/agreement. It makes zero network/API requests. A receipt from the final package check is in `docs/PUBLIC_PACKAGE_VALIDATION.json`.
+This checks Python 3.8 syntax, complete seed inventories, all four metric means/sample SDs against the published per-fit tables, the nine reused construction references, Amazon paired gaps, original replication log/epoch/selection summaries, and all three raw Gemini responses and their recorded hashes/citations/ratings/agreement. It makes zero network/API requests. A receipt from the final package check is in `docs/PUBLIC_PACKAGE_VALIDATION.json`.
 
 This is a consistency check of included evidence. It does not rerun model checkpoints or recompute classifier metrics from prediction arrays that are excluded from Git.
 
@@ -33,6 +33,12 @@ The archived orchestration drivers retain the original input fingerprints and ow
 
 ## 4. Study status and preserved artifacts
 
-`docs/RUBRIC_TRACKER.md` is the current status. The trackers under the three training-result directories are historical snapshots. Original frozen prompts/manifests and blank review templates preserve the plan; completed Gemini API evidence is separate. No independent human agreement is claimed. The frozen raw-evidence subtree is exempt from Git line-ending conversion so its recorded SHA256 values remain meaningful across Windows and Linux.
+`docs/RUBRIC_TRACKER.md` is the current status. The trackers under the three training-result directories are historical snapshots. Original frozen prompts/manifests and blank review templates preserve the plan; completed Gemini API evidence is separate. No independent human agreement is claimed. The frozen judge-evidence and historical replication raw-record subtrees is exempt from Git line-ending conversion so its recorded SHA256 values remain meaningful across Windows and Linux.
 
 No extra model fitting or API calls are necessary to inspect the published findings. The final ACL report is prepared separately.
+
+## 5. Original replication, separately from extensions
+
+`python verify_replication.py` checks the original log and seeded records using only the standard library. The evidence directory explains its exact coverage and the precision limit of the original ten-run console figures. The three Amazon diagnostic selectors reuse five training trajectories, not fifteen. No public-check receipt claims access to the excluded prediction arrays or execution of model checkpoints.
+
+The separate ACL report has been prepared and revised after review. Course-specific ethics resources and later lecturer guidance remain final compliance inputs; this repository does not certify those unseen requirements.

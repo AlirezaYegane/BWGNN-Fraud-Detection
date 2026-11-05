@@ -136,7 +136,7 @@ Each pair of runs agrees on all 24 texts: **100% exact agreement; unweighted Coh
 | Construction sensitivity | 18 | Two new constructions × 3 model seeds × 3 models; nine reference results reused. |
 | **Total** | **128** | **12,800 epochs. Original replication and toy self-checks are excluded.** |
 
-For the extensions, I fit the standardizer using training roots only and use validation data to select checkpoints and decision thresholds. The original-paper reproduction keeps its released evaluation semantics. The detailed guide explains that distinction and the use of logit-margin scores for ROC-AUC and AP.
+For Ethereum, I fit the standardizer using training roots only. Amazon retains its original prepared features. For both extensions, validation data selects checkpoints and decision thresholds. The original-paper reproduction keeps its released evaluation semantics. The detailed guide explains that distinction and the use of logit-margin scores for ROC-AUC and AP.
 
 ## Quick start
 
@@ -197,7 +197,7 @@ The source drivers retain their archived input fingerprints. Freshly rebuilt dat
 | [`results/comp8240_a3_core_analysis/`](results/comp8240_a3_core_analysis/) | Ethereum and Amazon summaries, paired differences and audits |
 | [`results/comp8240_a3_sensitivity_analysis/`](results/comp8240_a3_sensitivity_analysis/) | Capacity, loop and filter-order comparisons |
 | [`results/comp8240_a3_sampling_analysis/`](results/comp8240_a3_sampling_analysis/) | Construction checks and graph-overlap analysis |
-| [`results/explanation_judge/`](results/explanation_judge/) | All 72 ratings, anonymous raw evidence and the independent audit |
+| [`results/explanation_judge/`](results/explanation_judge/) | All 72 ratings, de-identified per-case evidence and the separate audit script |
 | [`explanation_study/`](explanation_study/) | Original frozen casepack, prompts and blank pre-execution templates |
 | [`gemini_api/`](gemini_api/) | Actual judge runner and SSL/overload recovery code |
 | [`THIRD_PARTY.md`](THIRD_PARTY.md) | Original-code attribution and source handling |
@@ -239,3 +239,9 @@ AI tools helped with code and documentation preparation and review. The reported
   <strong>Alireza Yegane · Macquarie University</strong><br/>
   COMP8240 · Assessment 3 · 2026
 </p>
+
+### Replication evidence added after review
+
+The original reproduction records are now in [`results/replication/`](results/replication/): the ten-run Amazon console log, ten YelpChi seed records and five Amazon diagnostic seed records. `python verify_replication.py` checks their hashes, validation selections and population-SD summaries. The main public check includes it. This adds access to historical evidence; it does not add new model fits or private prediction arrays.
+
+The accompanying report was revised after an independent review. The numerical experimental baseline remains commit `3e70f6d`; this documentation/evidence update does not change the training drivers or frozen API responses. See [the response and remaining limits](docs/POST_AUDIT_RESPONSE.md).
