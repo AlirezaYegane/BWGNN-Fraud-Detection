@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "checks": [
+    "Python 3.8 syntax",
+    "75 core + 35 sensitivity + 18 new construction fits; nine reused references are not double counted",
+    "All four metric means and sample SDs recomputed from published per-fit tables",
+    "Amazon paired gaps recomputed from per-seed scores",
+    "Three raw Gemini responses, request/input hashes, 72 ratings, citations and agreement re-audited"
+  ],
+  "distinct_extension_fits_in_tables": 128,
+  "scientific_retraining": false,
+  "network_requests": 0,
+  "checked_sources_sha256": {
+    "verify_public_results.py": "4ab90288d7800dd2ab22691f7dd1168ca70445ea6ae84fbab41d3b74ffc9c36d",
+    "results/comp8240_a3_core_analysis/all_model_results.csv": "230b8a80978d1f99b8f597e22658cc5dd0880c0eeab423b454d8d2251412b5be",
+    "results/comp8240_a3_sensitivity_analysis/sensitivity_results.csv": "8353adb43cd77790cb2ac9dbaea36a8bca7bfb11e0019320aa0926f90d59605d",
+    "results/comp8240_a3_sampling_analysis/sampling_results.csv": "74765dc0b8d39bd19118ed0d0e53d5aefe1c6b77c139951e5f1a3da6815d2c3b"
+  },
+  "scope": "Published-table consistency and raw judge evidence. No re-execution of model checkpoints or recomputation from private prediction arrays."
+}

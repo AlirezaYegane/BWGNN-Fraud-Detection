@@ -33,6 +33,8 @@ The original files are never patched. Run scientific scripts from the project di
 
 ## Marker quick checks
 
+A standard-library-only public check is available before installing the ML stack or downloading upstream code: `python verify_public_results.py`. It checks the published per-fit/aggregate tables and byte-exact raw judge evidence, not private classifier prediction arrays. See [MARKER_GUIDE.md](MARKER_GUIDE.md) for the separate verification levels.
+
 ```powershell
 python verify_submission.py --runtime
 ```

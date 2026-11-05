@@ -1,9 +1,21 @@
-# Analyse actual explanation-support ratings
+# Completed explanation-support evaluation
 
-After completing the human review and the three fresh-chat runs, save each actual JSON response and complete human_ratings.csv and run_metadata.csv. Do not use empty templates as results.
+The reported results are the three actual Gemini 3.6 Flash single-turn API responses under `results/explanation_judge/evidence/`, not the blank templates in the original study directory. Read [the completed audit and limits](../results/explanation_judge/JUDGE_RESULTS_REVIEW.md).
 
-```text
-python analyse_explanation_study.py --study explanation_study --responses RUN1.json RUN2.json RUN3.json --human HUMAN.csv --metadata METADATA.csv --output EXPLANATION_RESULTS.json
+From the repository root, check all published tables and the raw judge evidence without credentials, downloads or model training:
+
+```powershell
+python verify_public_results.py
 ```
 
-The analyser rejects missing/duplicated item IDs, blank ratings, incomplete metadata and altered frozen case/prompt inputs. A software fixture is tested in tests/test_workflow.py; its synthetic ratings are never included as study findings. Per-run rating proportions, pairwise judge agreement, unweighted Cohen kappa, human-versus-run agreement and majority ties are reported. Templates are constructed controls, cases are dependent, and the one author reviewer is not an independent expert panel.
+The standalone raw-evidence auditor also accepts the original unchanged ZIP:
+
+```powershell
+python results/explanation_judge/audit_judge_evidence.py --evidence "ORIGINAL_GEMINI_EVIDENCE.zip" --output "LOCAL_JUDGE_CHECKS"
+```
+
+There are 24 unique rule-written texts from eight cases and three repeated judgments, not 72 independent examples. Agreement is repeated-judge consistency on simple controls. The prior human-review draft was AI-assisted; no independent human–LLM agreement is computed. Any later author review after seeing these results would be post-LLM and non-blinded.
+
+## Historical combined human/LLM analyser
+
+`analyse_explanation_study.py` remains available for the originally planned protocol when genuinely completed human ratings and metadata are supplied. Its software tests use synthetic fixtures. Neither those fixtures nor empty templates are findings. That historical analyser was not used to manufacture human comparisons for the completed Gemini pilot. Do not fill missing human ratings with generated text or retrospectively label them independent.

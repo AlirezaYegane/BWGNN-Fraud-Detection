@@ -7,3 +7,6 @@
 *.ps1 text eol=crlf
 *.png binary
 *.pdf binary
+
+# Frozen API evidence uses byte-exact hashes; never normalize its line endings.
+results/explanation_judge/evidence/** -text

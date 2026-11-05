@@ -1,3 +1,5 @@
+> **Historical audit snapshot.** Pending items below describe the stage when this analysis was prepared, not the current project status. See the [current readiness tracker](../../docs/RUBRIC_TRACKER.md) for completed sampling, Gemini evaluation, Windows validation and public publication.
+
 # COMP8240 Assessment 3 - rubric and evidence tracker
 
 Owner: Alireza Yegane. Initial audit: 3 November 2026.

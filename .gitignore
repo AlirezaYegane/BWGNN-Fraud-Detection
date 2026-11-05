@@ -36,3 +36,5 @@ gemini_api/gemini_judge_runs/
 openai_api/openai_judge_runs/
 
 LOCAL_JUDGE_CHECKS/
+
+validation_receipt_public_local.json

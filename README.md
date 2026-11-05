@@ -140,6 +140,8 @@ For the extensions, I fit the standardizer using training roots only and use val
 
 ## Quick start
 
+For a fast check of the included tables and raw judge evidence, run `python verify_public_results.py` with Python 3.8 or later. It uses only the standard library and makes no network/API requests or model fits. See the [marker guide](docs/MARKER_GUIDE.md) for what each check establishes.
+
 The tested stack is **Python 3.8.20, NumPy 1.23.5, PyTorch 1.9.0, DGL 0.8.1, SciPy 1.10.1 and scikit-learn 1.3.2**. SymPy 1.13.3 and NetworkX 3.1 are also recorded in the environment file. The target platform is Windows; historical wheel availability on other platforms has not been verified.
 
 From a new checkout:
@@ -200,7 +202,7 @@ The source drivers retain their archived input fingerprints. Freshly rebuilt dat
 | [`gemini_api/`](gemini_api/) | Actual judge runner and SSL/overload recovery code |
 | [`THIRD_PARTY.md`](THIRD_PARTY.md) | Original-code attribution and source handling |
 
-The original frozen study manifest still says `prepared_not_executed`, because it records the plan before execution. The completed results and actual execution metadata are under `results/explanation_judge/`. The historical `openai_api/` alternative produced no judge output; Gemini is the source of the reported ratings.
+The [current readiness tracker](docs/RUBRIC_TRACKER.md) supersedes historical trackers in the training-analysis folders. The original frozen study manifest still says `prepared_not_executed`, because it records the plan before execution. The completed results and actual execution metadata are under `results/explanation_judge/`. The historical `openai_api/` alternative produced no judge output; Gemini is the source of the reported ratings.
 
 ## What these results can and cannot tell us
 
