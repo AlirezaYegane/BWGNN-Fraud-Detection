@@ -1,69 +1,164 @@
-# BWGNN reproduction and controlled fraud-graph experiments
+<p align="center">
+  <img src="assets/readme/university-header.svg" alt="Macquarie University — COMP8240, Assessment 3, Alireza Yegane" width="100%" />
+</p>
 
-Alireza Yegane, Macquarie University, COMP8240, student ID 60957107.
+<h1 align="center">BWGNN &amp; Graph Fraud Detection</h1>
 
-This repository contains the project extensions and verification workflow for Tang et al., *Rethinking Graph Neural Networks for Anomaly Detection* (ICML 2022). It preserves the original reproduction separately from Ethereum evaluation and the Amazon oracle camouflage stress test.
+<p align="center">
+  <strong>From paper reproduction to Ethereum experiments and controlled camouflage tests</strong>
+</p>
 
-Original paper: https://proceedings.mlr.press/v162/tang22b.html
+<p align="center">
+  <a href="https://proceedings.mlr.press/v162/tang22b.html">Original paper</a> ·
+  <a href="#results-at-a-glance">Results</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#where-to-find-the-evidence">Evidence</a> ·
+  <a href="docs/REPRODUCIBILITY.md">Full reproduction guide</a>
+</p>
 
-## Completed evidence
+---
 
-- Original replication: Amazon 40% homogeneous (ten archived unseeded runs), YelpChi 1% heterogeneous (seeds 0–9), plus five-seed Amazon selection diagnostics.
-- Core extensions: 15 Ethereum fits, and 60 Amazon fits covering five construction levels plus a maximum-swap random control, with five paired construction/model seeds.
-- Ethereum sensitivities: 35 fits for near-equal parameter budgets, self-loops and C=1/3/5; five existing C=2 fits reused.
-- 128 distinct extension fits and 12,800 epochs independently verified across the core, capacity/loop/order and construction-sensitivity batches. Original replication and toy checks are not included in that count.
-- The additional 18-fit construction-resampling check is complete and independently verified. The secondary explanation-support pilot is also complete: three real Gemini 3.6 Flash responses, 72 ratings over 24 fixed texts from eight cases; independent evidence audit PASS. Pairwise agreement is 100%, unweighted Cohen kappa 1.00. These are repeated judgments on constructed controls, not fraud-classification accuracy or independent human validation.
+## Overview
 
-Actual Windows Python 3.8.20 runtime checks passed: preprocessing, original-loop instrumentation, three-model CPU self-checks,75 core fits and35 sensitivity fits, without scientific retraining. The returned receipt is `docs/WINDOWS_RUNTIME_VALIDATION.json`; the18-fit sampling and72-rating judge audits are documented separately.
+This is my COMP8240 Assessment 3 project at Macquarie University. I started by reproducing two settings from **Rethinking Graph Neural Networks for Anomaly Detection** by Tang et al. (ICML 2022). I then tested BWGNN on a constructed Ethereum fraud graph and compared it with GCN and a feature-only MLP.
 
-Verified aggregate tables, figures, paired differences, audit receipts and interpretation notes are in `results/`. Large training evidence is kept locally rather than duplicated in Git. Anonymous judge JSON/text evidence is included under `results/explanation_judge/evidence/`.
+The question I wanted to explore was simple: **how well does BWGNN perform when I change the dataset, the graph construction, and the way suspicious nodes connect to other nodes?**
 
-## Environment
+BWGNN is the original authors' model. My work here covers reproduction, data preparation, baseline comparisons, sensitivity checks, and controlled experiments. I also added a small LLM study to check whether short descriptions stay within the evidence supplied to them.
 
-Verified execution platform: Windows PowerShell, Python 3.8.20, NumPy 1.23.5, PyTorch 1.9.0, DGL 0.8.1, SciPy 1.10.1, scikit-learn 1.3.2, SymPy 1.13.3 and NetworkX 3.1. New-data training uses CPU, 16 threads. Do not switch the reported experiments to a newer environment or GPU mid-protocol.
+<p align="center">
+  <img src="assets/readme/study-snapshot.svg" alt="128 verified extension fits; five seeds per primary setting; three Ethereum constructions; 72 explanation ratings" width="100%" />
+</p>
 
-Use the existing `bwgnn` environment when available. For a separate clean environment, `environment.yml` records the pinned stack:
+### Project snapshot
+
+| Item | Details |
+|---|---|
+| Student | **Alireza Yegane** · 60957107 |
+| University / unit | Macquarie University · **COMP8240, Assessment 3** |
+| Source paper | [Tang et al., ICML 2022](https://proceedings.mlr.press/v162/tang22b.html) |
+| Original code | [squareRoot3/Rethinking-Anomaly-Detection](https://github.com/squareRoot3/Rethinking-Anomaly-Detection) |
+| Reproduced settings | Amazon: 40% training, homogeneous graph; YelpChi: 1% training, heterogeneous graph |
+| Extensions | Ethereum evaluation; Amazon oracle camouflage; capacity, loop, filter-order and construction checks |
+| Implementation | Python · PyTorch · DGL · scikit-learn |
+| Verified platform | Windows · Python 3.8.20 · CPU with 16 threads |
+
+## Results at a glance
+
+The tables below report **my extension experiments**, separately from the original-paper reproduction. Values are means ± **sample standard deviation** across five seeds unless stated otherwise. Macro-F1, ROC-AUC and AP are shown as percentages; model gaps use percentage points (**pp**).
+
+### 1. Ethereum: BWGNN stays ahead in the budget check
+
+| Model | Primary test Macro-F1 (%) | ROC-AUC (%) | Average precision (%) |
+|---|---:|---:|---:|
+| **BWGNN** | **95.15 ± 0.42** | **98.59 ± 0.22** | **95.76 ± 0.42** |
+| GCN | 89.51 ± 0.85 | 96.06 ± 0.28 | 89.35 ± 0.69 |
+| MLP | 89.34 ± 0.30 | 96.64 ± 0.12 | 86.36 ± 1.84 |
+
+The primary models have different sizes and loop policies. I therefore also ran a comparison with near-equal parameter budgets and one self-loop per node for both GNNs.
+
+| Model | Parameters in budget check | Test Macro-F1 (%) |
+|---|---:|---:|
+| **BWGNN** | 1,394 | **94.76 ± 0.39** |
+| GCN | 1,388 | 89.88 ± 0.48 |
+| MLP | 1,402 | 89.18 ± 0.29 |
+
+<p align="center">
+  <img src="assets/readme/ethereum-comparison.png" alt="Ethereum test Macro-F1 comparison for the primary and near-equal-budget configurations; error bars show sample SD across five model seeds" width="100%" />
+</p>
+
+The paired BWGNN–GCN gap in the budget check is **4.88 ± 0.80 pp**, positive in all five seeds. This makes the comparison more informative, although similar parameter counts do not make the models equally expressive.
+
+[Primary results](results/comp8240_a3_core_analysis/summary_by_condition.csv) · [Budget-check results](results/comp8240_a3_sensitivity_analysis/sensitivity_summary.csv) · [Paired differences](results/comp8240_a3_sensitivity_analysis/paired_sensitivity_comparisons.csv)
+
+### 2. Amazon: a wider gap under oracle camouflage
+
+| Condition | BWGNN Macro-F1 (%) | GCN Macro-F1 (%) | Paired BWGNN–GCN gap (pp) |
+|---|---:|---:|---:|
+| Baseline | **91.85 ± 0.45** | 68.25 ± 0.63 | 23.60 ± 0.63 |
+| Oracle camouflage, strength 0.8 | **93.82 ± 0.41** | 66.58 ± 0.82 | 27.24 ± 0.82 |
+| Maximum-budget random control | **92.10 ± 0.38** | 68.39 ± 1.14 | 23.71 ± 1.29 |
+
+<p align="center">
+  <img src="assets/readme/amazon-camouflage.png" alt="Amazon Macro-F1 across all five oracle camouflage strengths and paired model-gap comparison with the maximum-budget random control; error bars show sample SD across five paired seeds" width="100%" />
+</p>
+
+The strongest oracle condition increases the paired gap by **3.64 ± 1.01 pp** relative to baseline and **3.53 ± 1.13 pp** relative to the random control. Both changes are positive in all five paired seeds.
+
+**Important context:** the rewiring uses eligible labels, including validation and test labels. This is a label-aware stress test, so I interpret it as a controlled experiment rather than evidence of real-world attack robustness. The random control matches the largest swap budget only. Construction and model seeds are paired, not crossed.
+
+[All condition summaries](results/comp8240_a3_core_analysis/summary_by_condition.csv) · [Per-seed paired gaps](results/comp8240_a3_core_analysis/paired_model_gaps.csv) · [Interpretation notes](results/comp8240_a3_core_analysis/CORE_RESULTS_REVIEW.md)
+
+### 3. Ethereum: checking a different construction
+
+I also changed the matched negative selection and sampled context, then repeated the three-model comparison with three model seeds per construction.
+
+| Construction seed | BWGNN Macro-F1 (%) | GCN Macro-F1 (%) | MLP Macro-F1 (%) |
+|---|---:|---:|---:|
+| 0 — original reference | **95.01 ± 0.30** | 89.77 ± 0.79 | 89.49 ± 0.30 |
+| 1 | **95.07 ± 0.32** | 90.52 ± 0.55 | 90.00 ± 0.29 |
+| 2 | **94.66 ± 0.14** | 89.77 ± 0.58 | 87.84 ± 0.19 |
+
+BWGNN leads both baselines in all nine construction/model-seed pairs. These are three samples from **one released snapshot**, with the same positive identities, including all 468 held-out positives. They therefore check joint construction sensitivity; they do not test transfer to independent datasets or new positive identities. The three-seed reference above is kept separate from the five-seed primary summary.
+
+[Construction summaries](results/comp8240_a3_sampling_analysis/sampling_summary.csv) · [Overlap checks](results/comp8240_a3_sampling_analysis/construction_overlap.csv)
+
+### Other sensitivity checks
+
+| Check | What I observed |
+|---|---|
+| BWGNN self-loops | Adding one loop per node changes primary Macro-F1 by **−0.42 ± 0.39 pp** across five paired seeds. |
+| Filter order | C=5 has the highest mean validation Macro-F1 among C=1/2/3/5. Test Macro-F1 is **95.14%**, compared with **95.15%** for C=2. |
+| Primary configuration | **C=2 remains the primary result.** The filter-order check does not provide a meaningful observed test improvement. |
+
+[Full sensitivity review](results/comp8240_a3_sensitivity_analysis/SENSITIVITY_RESULTS_REVIEW.md)
+
+## Small explanation-support study
+
+For eight Ethereum test cases, I prepared three short texts per case: a grounded description, a mixed unsupported-attribution control, and an unsupported-intent control. Gemini 3.6 Flash assessed the same 24 texts in three separate single-turn API requests with different fixed presentation orders.
+
+| Text family | Texts per run | Result in each of the three runs |
+|---|---:|---|
+| Grounded description | 8 | 8 supported |
+| Mixed attribution control | 8 | 8 partly_supported |
+| Unsupported intent control | 8 | 8 speculative |
+
+Each pair of runs agrees on all 24 texts: **100% exact agreement; unweighted Cohen's κ = 1.00**. I treat this as repeat consistency on simple constructed controls. The texts are rule-written rather than BWGNN-native explanations, and these ratings do not establish causal faithfulness or fraud-detection accuracy. The earlier human-review draft was AI-assisted, so I report no independent human–LLM agreement.
+
+[Audited ratings](results/explanation_judge/all_ratings_audited.csv) · [Raw responses and requests](results/explanation_judge/evidence/) · [Study review and limitations](results/explanation_judge/JUDGE_RESULTS_REVIEW.md)
+
+## How the experiments fit together
+
+| Part | New model fits | What it checks |
+|---|---:|---|
+| Core extension batch | 75 | Ethereum: 3 models × 5 seeds. Amazon: 6 conditions × 2 models × 5 paired seeds. |
+| Capacity, loop and order checks | 35 | Near-equal budgets, one-loop BWGNN, and C=1/3/5; existing C=2 results reused. |
+| Construction sensitivity | 18 | Two new constructions × 3 model seeds × 3 models; nine reference results reused. |
+| **Total** | **128** | **12,800 epochs. Original replication and toy self-checks are excluded.** |
+
+For the extensions, I fit the standardizer using training roots only and use validation data to select checkpoints and decision thresholds. The original-paper reproduction keeps its released evaluation semantics. The detailed guide explains that distinction and the use of logit-margin scores for ROC-AUC and AP.
+
+## Quick start
+
+The tested stack is **Python 3.8.20, NumPy 1.23.5, PyTorch 1.9.0, DGL 0.8.1, SciPy 1.10.1 and scikit-learn 1.3.2**. SymPy 1.13.3 and NetworkX 3.1 are also recorded in the environment file. The target platform is Windows; historical wheel availability on other platforms has not been verified.
+
+From a new checkout:
 
 ```powershell
+git clone https://github.com/AlirezaYegane/BWGNN-Fraud-Detection.git
+cd BWGNN-Fraud-Detection
 conda env create -f environment.yml
 conda activate bwgnn-a3
-```
-
-The historical wheel availability on every operating system has not been tested; the documented target is Windows/Python 3.8.20. Record any installation failure rather than silently upgrading libraries.
-
-## Original source bootstrap
-
-From this repository directory:
-
-```powershell
 python bootstrap_upstream.py
-```
-
-This downloads the exact three original files at the audited commit and verifies their LF-normalised SHA256 fingerprints. They are ignored by Git; attribution is in `THIRD_PARTY.md`. If the original project already exists locally, avoid a network download:
-
-```powershell
-python bootstrap_upstream.py --from-project "C:\Users\Asus\Documents\COMP8240\Rethinking-Anomaly-Detection"
-```
-
-The original files are never patched. Run scientific scripts from the project directory so their original-source checks can locate those files.
-
-## Marker quick checks
-
-```powershell
 python verify_submission.py --runtime
 ```
 
-This runs actual small preprocessing, metric/instrumentation and three-model CPU checks. It does not download full datasets or repeat the scientific training. To verify complete saved evidence, extract its ZIPs into separate directories, then run:
+The bootstrap downloads three unchanged original model files from the pinned upstream commit and checks their fingerprints. The runtime check runs small preprocessing and model checks; it does not repeat the full experiment batches. If you already have the verified environment, use it and follow the [existing-environment instructions](docs/REPRODUCIBILITY.md).
 
-```powershell
-python verify_submission.py --core "PATH_TO_EXTRACTED_CORE" --sensitivity "PATH_TO_EXTRACTED_SENSITIVITY"
-```
+<details>
+<summary><strong>Original reproduction commands</strong></summary>
 
-Recorded Windows paths can be relocated; the verifier resolves the evidence's directory layout. Saved checkpoint files are fingerprinted. The score verifier recomputes metrics from NPZ arrays; it does not claim to execute checkpoints or infer their correctness from filenames.
-
-## Original reproduction
-
-Amazon/YelpChi download automatically through DGL when first needed. An existing DGL cache can be reused. These commands preserve the released evaluation semantics:
+Run from the repository root after the bootstrap. DGL downloads Amazon/YelpChi when needed; an existing cache can be reused.
 
 ```powershell
 python main.py --dataset amazon --train_ratio 0.4 --hid_dim 64 --order 2 --homo 1 --epoch 100 --run 10
@@ -71,70 +166,74 @@ python audit_bwgnn.py --dataset yelp --train_ratio 0.01 --hid_dim 64 --order 2 -
 python audit_bwgnn.py --dataset amazon --train_ratio 0.4 --hid_dim 64 --order 2 --homo 1 --epoch 100 --seeds 0 1 2 3 4
 ```
 
-The archived ten-run Amazon experiment is unseeded; an exact rerun of its individual values is not promised. Historical summaries use population SD (ddof=0), matching the released implementation. Extension summaries use sample SD (ddof=1).
+The archived ten-run Amazon reproduction is unseeded. Its exact individual values are not promised on rerun. Historical reproduction summaries use population SD; extension tables on this page use sample SD.
 
-## Data construction and general reproduction
+</details>
 
-See `docs/DATA_AND_COMMANDS.md` for raw-data provenance, fingerprints, preprocessing and training commands. Prepared inputs are not committed. Fresh reconstructions have new provenance manifests; use the general commands rather than pretending their byte hashes must equal the archived run's immutable companion reports.
+<details>
+<summary><strong>Verify saved results without repeating training or API calls</strong></summary>
 
-`run_assessment3_core.py` and `run_sensitivity.py` are the exact archived orchestration drivers. Their `audited_inputs.json` deliberately locks the original prepared inputs and companions; they are appropriate for continuing the audited local project, not for bypassing provenance checks after a fresh reconstruction.
-
-## Completed construction-sensitivity check and reproduction
-
-For the existing audited Windows project:
+Large training evidence is stored separately from Git. Once its archives are available locally:
 
 ```powershell
-& powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Run-Sampling-Check.ps1
+python verify_submission.py --core "EXTRACTED_CORE" --sensitivity "EXTRACTED_SENSITIVITY"
+python verify_sampling.py --sampling "EXTRACTED_SAMPLING" --core "EXTRACTED_CORE" --baseline-dataset "ORIGINAL_SEED0_DATASET.npz" --output "LOCAL_SAMPLING_CHECKS"
+python results/explanation_judge/audit_judge_evidence.py --evidence "GEMINI_JUDGE_EVIDENCE.zip" --output "LOCAL_JUDGE_CHECKS"
 ```
 
-Completed and verified: 18 additional fits, construction seeds 1/2 × model seeds 0/1/2 × BWGNN/GCN/MLP. Nine seed0-construction reference fits are reused from the core batch. Each fit uses 100 epochs, width64, C=2, learning rate0.01 and the original loop policies. State and partial evidence support resume using `-Resume "PRINTED_BATCH_DIRECTORY"`. `-PreflightOnly` checks the required inputs without starting training.
+The source drivers retain their archived input fingerprints. Freshly rebuilt data has new provenance and should use the [general reconstruction commands](docs/DATA_AND_COMMANDS.md), rather than bypassing the archived checks.
 
-This changes matched negative selection and sampled context, and may change root membership/split assignment. It is a **joint construction sensitivity** on the same released snapshot, not an isolated sampling-only causal experiment or three independent datasets. Report model-seed variation within each construction separately. Keep all outcomes, including worse results; do not choose construction seeds using test scores.
+</details>
 
-## Secondary explanation evaluation
+## Where to find the evidence
 
-Completed on 5 November 2026 using the three frozen prompts, independent single-turn Gemini 3.6 Flash API calls and the recorded bounded-overload retry policy. All 72 ratings and their raw responses are in `results/explanation_judge/`. The independent audit checks source/input/output fingerprints, case-specific citations, distinct prompt orders and response IDs, exact agreement and Cohen kappa. All four frozen casepack/prompt files also match regeneration from the primary saved Ethereum predictions and dataset.
+| Folder / file | Contents |
+|---|---|
+| [`docs/DATA_AND_COMMANDS.md`](docs/DATA_AND_COMMANDS.md) | Data provenance, feature construction and general experiment commands |
+| [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | Full environment, reproduction and saved-evidence verification notes |
+| [`docs/WINDOWS_RUNTIME_VALIDATION.json`](docs/WINDOWS_RUNTIME_VALIDATION.json) | Actual Windows runtime receipt: preprocessing, instrumentation, three models, 75 core and 35 sensitivity fits |
+| [`results/comp8240_a3_core_analysis/`](results/comp8240_a3_core_analysis/) | Ethereum and Amazon summaries, paired differences and audits |
+| [`results/comp8240_a3_sensitivity_analysis/`](results/comp8240_a3_sensitivity_analysis/) | Capacity, loop and filter-order comparisons |
+| [`results/comp8240_a3_sampling_analysis/`](results/comp8240_a3_sampling_analysis/) | Construction checks and graph-overlap analysis |
+| [`results/explanation_judge/`](results/explanation_judge/) | All 72 ratings, anonymous raw evidence and the independent audit |
+| [`explanation_study/`](explanation_study/) | Original frozen casepack, prompts and blank pre-execution templates |
+| [`gemini_api/`](gemini_api/) | Actual judge runner and SSL/overload recovery code |
+| [`THIRD_PARTY.md`](THIRD_PARTY.md) | Original-code attribution and source handling |
 
-Each run gives eight supported descriptive texts, eight partly_supported attribution controls and eight speculative intent controls. Every pair of runs agrees on all 24 texts (kappa1.00). Read `results/explanation_judge/JUDGE_RESULTS_REVIEW.md` for limits: eight cases, simple rule-written templates, one model, repeated dependent judgments, no causal explanation faithfulness or classifier-accuracy claim. The earlier author-review draft was AI-assisted; no independent human–LLM agreement is reported.
+The original frozen study manifest still says `prepared_not_executed`, because it records the plan before execution. The completed results and actual execution metadata are under `results/explanation_judge/`. The historical `openai_api/` alternative produced no judge output; Gemini is the source of the reported ratings.
 
-The frozen files in `explanation_study/` preserve the original prepared plan and blank templates; their historical prepared_not_executed status is not the current execution status. The actual protocol and recovery-policy addendum are in the completed evidence. Do not run another judge batch to reproduce a preferred answer. To verify the returned ZIP without API calls, use:
+## What these results can and cannot tell us
 
-```powershell
-python results/explanation_judge/audit_judge_evidence.py --evidence "PATH_TO_GEMINI_JUDGE_EVIDENCE_ZIP" --output "LOCAL_JUDGE_CHECKS"
+- **Labels need care.** Ethereum proxy negatives are sampled unlabelled accounts, not verified benign accounts. The 20% positive share among labelled roots is a construction choice.
+- **The graph is a sample.** Negative matching, sampled context and the released static snapshot limit what I can conclude about other populations or future transactions.
+- **The oracle has extra information.** Amazon rewiring uses validation/test labels and a random control matched only at the maximum swap budget.
+- **A better score is not a mechanism explanation.** The comparisons do not establish that a particular spectral mechanism caused the performance gap.
+- **The judge pilot is small.** Eight cases and repeated templates are useful checks, but they do not establish real-world explanation quality or independent human agreement.
+
+Raw addresses, full data arrays, model checkpoints and credentials are excluded from ordinary Git commits. The final ACL report is prepared separately from this code repository.
+
+## Acknowledgements and citation
+
+This project builds on **Jianheng Tang, Jiajin Li, Ziqi Gao and Jia Li's BWGNN work**. Please cite the original paper when using the model:
+
+```bibtex
+@InProceedings{pmlr-v162-tang22b,
+  title     = {Rethinking Graph Neural Networks for Anomaly Detection},
+  author    = {Tang, Jianheng and Li, Jiajin and Gao, Ziqi and Li, Jia},
+  booktitle = {Proceedings of the 39th International Conference on Machine Learning},
+  pages     = {21076--21089},
+  year      = {2022},
+  volume    = {162},
+  series    = {Proceedings of Machine Learning Research},
+  url       = {https://proceedings.mlr.press/v162/tang22b.html}
+}
 ```
 
-## Scope and interpretation
+AI tools helped with code and documentation preparation and review. The reported experiment outputs come from the saved runs linked above; Gemini's role is limited to the secondary factual-support pilot.
 
-- Primary core configuration remains C=2. C=5 was selected only for a secondary sensitivity by mean validation Macro-F1 and has essentially unchanged observed test Macro-F1.
-- Ethereum uses label-informed sampling, a static snapshot, train-only standardisation and noisy proxy negatives; supervised-root prevalence is 20% by construction.
-- Amazon rewiring uses all eligible labels, including validation/test labels, as an oracle. It is not a realistic unseen-label attack. Its random control matches the largest swap budget only. Graph and model seeds are paired, not crossed.
-- Parameter-matched performance is not proof of identical model expressivity or of a causal spectral mechanism.
-- New-data validation uses fresh post-update logits and restores the selected parameters; original reproduction retains its released semantics.
+---
 
-## Public repository and submission
-
-Publish this extension repository under the student's own account and verify that its README can be opened while signed out. The final ACL report must contain that public URL in a footnote. The original authors' repository alone is insufficient. Keep raw addresses, credentials, full data arrays, model checkpoints and local runtime evidence out of ordinary Git commits; use the documented data-access path.
-
-The final report has not been written in this package. AI-assisted code/document preparation and the actual LLM judging should be disclosed accurately according to the unit instructions. Student review and responsibility remain necessary; no grade is guaranteed by a runnable repository.
-
-To run the software workflow tests without full training:
-
-```powershell
-python -m unittest discover -s tests -v
-```
-
-For a new empty repository created in your own GitHub account, prepare a local commit using `Publish-Repository.ps1 -RepositoryUrl "YOUR_HTTPS_REPOSITORY_URL"`. Review the staged summary. Add `-Push` only when you intend to publish to that repository. Existing origins are not replaced and force-push is not used. Git must already have a valid author identity and authentication. Keep Python line endings as specified in `.gitattributes`; the provenance-locked scripts are byte-checked.
-
-To verify the completed sampling evidence without training:
-
-```powershell
-python verify_sampling.py --sampling "EXTRACTED_SAMPLING_DIRECTORY" --core "EXTRACTED_CORE_DIRECTORY" --baseline-dataset "ORIGINAL_SEED0_DATASET.npz" --output "LOCAL_SAMPLING_CHECKS"
-```
-
-The baseline dataset option adds overlap comparisons against construction0; its recorded fingerprint must match. The other two sampled datasets are included in the sampling evidence ZIP. `Complete-Tonight.ps1` now checks existing results by default; it starts a new 18-fit batch only with explicit `-RunSampling`. The unchanged `Run-Sampling-Check.ps1` remains available for deliberate reproduction.
-
-## Historical API execution code
-
-`gemini_api/run_gemini_judge.py` and `gemini_api/recovery/` are the actual executed runner and TLS/overload recovery code. They preserve frozen inputs and save full responses, usage and hashes. Successful execution is already complete; no further API requests are needed. Its original README describes the pre-execution state; the completed result review and evidence supersede that status.
-
-`openai_api/` records an attempted alternative after Gemini overload. The user's OpenAI request returned credit_balance_exhausted and produced no judgment. The user declined paid API credit and returned to the verified Gemini Free Tier project. GPT-5.4 is not the source of the reported judge results. Its offline software checks are not study findings. Preserve the failed OpenAI evidence separately if available; it was not supplied in the completed Gemini ZIP.
+<p align="center">
+  <strong>Alireza Yegane · Macquarie University</strong><br/>
+  COMP8240 · Assessment 3 · 2026
+</p>
