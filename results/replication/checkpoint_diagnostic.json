@@ -1,0 +1,100 @@
+{
+  "method": "Maxima of four-decimal printed validation Macro-F1, not recovered full-precision selected epochs; all tied maxima are retained.",
+  "original_runs": [
+    {
+      "run_index_zero_based": 0,
+      "test_auc_percent": 98.01,
+      "test_macro_f1_percent": 92.11,
+      "maximum_printed_validation_macro_f1": 0.9138,
+      "epochs_at_printed_maximum": [
+        95
+      ]
+    },
+    {
+      "run_index_zero_based": 1,
+      "test_auc_percent": 97.3,
+      "test_macro_f1_percent": 92.26,
+      "maximum_printed_validation_macro_f1": 0.9128,
+      "epochs_at_printed_maximum": [
+        95
+      ]
+    },
+    {
+      "run_index_zero_based": 2,
+      "test_auc_percent": 98.06,
+      "test_macro_f1_percent": 92.23,
+      "maximum_printed_validation_macro_f1": 0.9134,
+      "epochs_at_printed_maximum": [
+        93
+      ]
+    },
+    {
+      "run_index_zero_based": 3,
+      "test_auc_percent": 93.67,
+      "test_macro_f1_percent": 92.46,
+      "maximum_printed_validation_macro_f1": 0.9107,
+      "epochs_at_printed_maximum": [
+        17
+      ]
+    },
+    {
+      "run_index_zero_based": 4,
+      "test_auc_percent": 96.91,
+      "test_macro_f1_percent": 92.24,
+      "maximum_printed_validation_macro_f1": 0.9081,
+      "epochs_at_printed_maximum": [
+        98
+      ]
+    },
+    {
+      "run_index_zero_based": 5,
+      "test_auc_percent": 97.4,
+      "test_macro_f1_percent": 92.56,
+      "maximum_printed_validation_macro_f1": 0.907,
+      "epochs_at_printed_maximum": [
+        70,
+        71
+      ]
+    },
+    {
+      "run_index_zero_based": 6,
+      "test_auc_percent": 92.23,
+      "test_macro_f1_percent": 92.25,
+      "maximum_printed_validation_macro_f1": 0.9117,
+      "epochs_at_printed_maximum": [
+        9,
+        10
+      ]
+    },
+    {
+      "run_index_zero_based": 7,
+      "test_auc_percent": 97.56,
+      "test_macro_f1_percent": 92.08,
+      "maximum_printed_validation_macro_f1": 0.918,
+      "epochs_at_printed_maximum": [
+        92
+      ]
+    },
+    {
+      "run_index_zero_based": 8,
+      "test_auc_percent": 97.3,
+      "test_macro_f1_percent": 92.44,
+      "maximum_printed_validation_macro_f1": 0.9165,
+      "epochs_at_printed_maximum": [
+        81
+      ]
+    },
+    {
+      "run_index_zero_based": 9,
+      "test_auc_percent": 97.17,
+      "test_macro_f1_percent": 91.58,
+      "maximum_printed_validation_macro_f1": 0.9148,
+      "epochs_at_printed_maximum": [
+        94
+      ]
+    }
+  ],
+  "replication_evidence_commit": "769912369f8ec409a64e2178a74e0b868835a030",
+  "source_path": "results/replication/raw/amazon_original_10runs.log",
+  "source_sha256": "32482537775ab252628673d63f1f56e2e1ae4b2876f7ca00ced772c3d3a66c92"
+}

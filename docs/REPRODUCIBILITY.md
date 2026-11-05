@@ -101,7 +101,7 @@ python results/explanation_judge/audit_judge_evidence.py --evidence "PATH_TO_GEM
 
 The public project repository is https://github.com/AlirezaYegane/BWGNN-Fraud-Detection. The final ACL report is prepared separately and references this repository. Keep raw addresses, credentials, full data arrays, model checkpoints and local runtime evidence out of ordinary Git commits; use the documented data-access path.
 
-The final ACL report is prepared as a separate deliverable and was revised after independent review. It discloses AI-assisted code/document preparation and the actual LLM judging. Unit-specific ethics resources and later lecturer clarifications remain to be checked; I take responsibility for the submitted work. No grade is guaranteed by a runnable repository.
+The final ACL report is prepared as a separate deliverable and was revised after AI-assisted review. It discloses AI-assisted code/document preparation and the actual LLM judging. Unit-specific ethics resources and later lecturer clarifications remain to be checked; I take responsibility for the submitted work. No grade is guaranteed by a runnable repository.
 
 To run the software workflow tests without full training:
 

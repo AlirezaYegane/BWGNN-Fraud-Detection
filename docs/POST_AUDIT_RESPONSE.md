@@ -1,6 +1,6 @@
-# Response to the independent report review
+# Response to AI-assisted report review
 
-Prepared 5 November 2026 by Alireza Yegane with AI assistance. The review's 35/40 is a provisional estimate, not an official mark. I used its factual findings to revise the report and improve access to the evidence. I have not added new training runs or human annotations.
+Prepared 5 November 2026 by Alireza Yegane with AI assistance. I used its factual findings to revise the report and improve access to the evidence. I have not added new training runs or human annotations.
 
 | Review point | Revision and verification |
 |---|---|
@@ -29,3 +29,16 @@ All 25 existing orchestration/API tests pass. Negative checks on temporary copie
 3. Read the final manuscript personally and submit the compiled ACL PDF under the actual course instructions. The plain version contains eight manuscript pages plus references; the optional cover/contents version has ten pages before references.
 
 No predicted full mark is attached to these revisions. Proxy negatives, one source snapshot, shared positive identities and no independent human evaluation remain scientific limitations.
+
+## Second review: final wording and provenance corrections
+
+The draft/report review was AI-assisted, not an independent human assessment. I checked its factual suggestions against saved records; I removed its estimated mark from the repository.
+
+- N1: The report footnote and self-reference now distinguish experimental-results commit `3e70f6d` from original-replication evidence commit `7699123`. These are stable source snapshots, not a claim that either hash is the latest documentation commit.
+- N2: Section 10 explicitly discloses AI-assisted draft/repository review. README and current documentation use the same description.
+- N3: Section 7 describes the threshold-distance halves directly; it no longer uses an undefined “Nearer” label.
+- N4: Section 9 distinguishes the earlier Windows check from the completed updated Linux/Python 3.12.14 check and its actual receipt.
+- N5: The abstract now states that oracle rewiring carries test-label information.
+- N6: Section 3.2 reports the observed early-checkpoint pattern, including printed-value ties and the distinction between association and a causal explanation. `results/replication/checkpoint_diagnostic.json` retains all ten runs' printed validation maxima; it is derived from the unchanged log in evidence commit `7699123`. It does not recover missing full-precision epoch selection or original prediction arrays.
+
+Only documentation and this derived diagnostic are changed in the second update. Training drivers, verifiers, scientific result tables, historical validation receipts, and frozen raw evidence remain unchanged. The public verification was rerun on the revised checkout; no training or API generation was repeated.

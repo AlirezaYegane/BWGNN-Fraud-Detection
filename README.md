@@ -244,4 +244,4 @@ AI tools helped with code and documentation preparation and review. The reported
 
 The original reproduction records are now in [`results/replication/`](results/replication/): the ten-run Amazon console log, ten YelpChi seed records and five Amazon diagnostic seed records. `python verify_replication.py` checks their hashes, validation selections and population-SD summaries. The main public check includes it. This adds access to historical evidence; it does not add new model fits or private prediction arrays.
 
-The accompanying report was revised after an independent review. The numerical experimental baseline remains commit `3e70f6d`; this documentation/evidence update does not change the training drivers or frozen API responses. See [the response and remaining limits](docs/POST_AUDIT_RESPONSE.md).
+The accompanying report was revised after an AI-assisted review. The numerical experimental baseline remains commit `3e70f6d`; this documentation/evidence update does not change the training drivers or frozen API responses. See [the response and remaining limits](docs/POST_AUDIT_RESPONSE.md).
