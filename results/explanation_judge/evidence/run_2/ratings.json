@@ -1,0 +1,244 @@
+{
+  "ratings": [
+    {
+      "item_id": "J001",
+      "rating": "supported",
+      "evidence_ids": [
+        "C02.E1",
+        "C02.E2",
+        "C02.E3",
+        "C02.E6"
+      ],
+      "reason": "The factual claims match C02 evidence exactly and correctly note that observations do not establish causal feature importance or verified fraud."
+    },
+    {
+      "item_id": "J002",
+      "rating": "supported",
+      "evidence_ids": [
+        "C03.E1",
+        "C03.E2",
+        "C03.E3",
+        "C03.E6"
+      ],
+      "reason": "Accurately reports model score, threshold, graph degree, and standardized feature value while appropriately framing uncertainty."
+    },
+    {
+      "item_id": "J003",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C07.E6"
+      ],
+      "reason": "Claims verified criminal intent, phishing operation, and future fraud without support, contradicting C07.E6."
+    },
+    {
+      "item_id": "J004",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C06.E1",
+        "C06.E2",
+        "C06.E3",
+        "C06.E6"
+      ],
+      "reason": "Combines accurate score and feature observations with an unsupported claim of causal feature importance."
+    },
+    {
+      "item_id": "J005",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C02.E1",
+        "C02.E2",
+        "C02.E3",
+        "C02.E6"
+      ],
+      "reason": "Mixes supported descriptive metrics with an unsupported assertion that the feature was the main cause of the model decision."
+    },
+    {
+      "item_id": "J006",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C01.E1",
+        "C01.E2",
+        "C01.E3",
+        "C01.E6"
+      ],
+      "reason": "Combines supported factual data about score and degree with an unsupported causal feature attribution."
+    },
+    {
+      "item_id": "J007",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C07.E1",
+        "C07.E2",
+        "C07.E3",
+        "C07.E6"
+      ],
+      "reason": "Accurately states descriptive observations but asserts unsupported causal feature influence."
+    },
+    {
+      "item_id": "J008",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C03.E1",
+        "C03.E2",
+        "C03.E3",
+        "C03.E6"
+      ],
+      "reason": "Mixes correct model and graph observations with an unverified assertion of causal feature attribution."
+    },
+    {
+      "item_id": "J009",
+      "rating": "supported",
+      "evidence_ids": [
+        "C06.E1",
+        "C06.E2",
+        "C06.E3",
+        "C06.E6"
+      ],
+      "reason": "All descriptive statements match C06 evidence and appropriately avoid inferring causality or illegal intent."
+    },
+    {
+      "item_id": "J010",
+      "rating": "supported",
+      "evidence_ids": [
+        "C05.E1",
+        "C05.E2",
+        "C05.E3",
+        "C05.E6"
+      ],
+      "reason": "Supported by C05 evidence and correctly disclaims feature attribution and verified fraud."
+    },
+    {
+      "item_id": "J011",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C03.E6"
+      ],
+      "reason": "Asserts criminal intent, phishing, and future fraud, which lack support and contradict C03.E6."
+    },
+    {
+      "item_id": "J012",
+      "rating": "supported",
+      "evidence_ids": [
+        "C04.E1",
+        "C04.E2",
+        "C04.E3",
+        "C04.E6"
+      ],
+      "reason": "Directly supported by C04 evidence, with appropriate caveats regarding causality and intent."
+    },
+    {
+      "item_id": "J013",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C08.E1",
+        "C08.E2",
+        "C08.E3",
+        "C08.E6"
+      ],
+      "reason": "Mixes supported graph/score descriptions with an unsupported causal attribution claim."
+    },
+    {
+      "item_id": "J014",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C05.E6"
+      ],
+      "reason": "Asserts criminal intent, phishing operations, and future acts without supplied evidence."
+    },
+    {
+      "item_id": "J015",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C02.E6"
+      ],
+      "reason": "Claims proven phishing, criminal intent, and future fraud without supporting evidence."
+    },
+    {
+      "item_id": "J016",
+      "rating": "supported",
+      "evidence_ids": [
+        "C08.E1",
+        "C08.E2",
+        "C08.E3",
+        "C08.E6"
+      ],
+      "reason": "Accurately reports C08 metrics and maintains correct uncertainty without asserting causality."
+    },
+    {
+      "item_id": "J017",
+      "rating": "supported",
+      "evidence_ids": [
+        "C07.E1",
+        "C07.E2",
+        "C07.E3",
+        "C07.E6"
+      ],
+      "reason": "Fully supported by C07 evidence, correctly treating score and features as descriptive observations."
+    },
+    {
+      "item_id": "J018",
+      "rating": "supported",
+      "evidence_ids": [
+        "C01.E1",
+        "C01.E2",
+        "C01.E3",
+        "C01.E6"
+      ],
+      "reason": "Supported by C01 evidence and explicitly notes that inputs do not establish causal influence or illicit behavior."
+    },
+    {
+      "item_id": "J019",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C08.E6"
+      ],
+      "reason": "Speculates about criminal intent, organized phishing, and future acts without evidence."
+    },
+    {
+      "item_id": "J020",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C01.E6"
+      ],
+      "reason": "Asserts organized phishing, criminal intent, and future fraud without factual basis."
+    },
+    {
+      "item_id": "J021",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C05.E1",
+        "C05.E2",
+        "C05.E3",
+        "C05.E6"
+      ],
+      "reason": "Combines factual C05 descriptive metrics with an unsupported claim of primary feature causation."
+    },
+    {
+      "item_id": "J022",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C04.E6"
+      ],
+      "reason": "Claims intent, phishing, and future fraud without support from supplied evidence."
+    },
+    {
+      "item_id": "J023",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C06.E6"
+      ],
+      "reason": "Makes speculative claims about criminal intent and future fraudulent acts."
+    },
+    {
+      "item_id": "J024",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C04.E1",
+        "C04.E2",
+        "C04.E3",
+        "C04.E6"
+      ],
+      "reason": "Mixes supported C04 metric observations with an unverified claim that the feature caused the model output."
+    }
+  ]
+}

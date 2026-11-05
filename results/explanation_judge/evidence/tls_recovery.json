@@ -1,0 +1,8 @@
+{
+  "timestamp_utc": "2026-11-05T03:09:57.248672+00:00",
+  "recovery": "Explicit PEM CA bundle; certificate and hostname verification enabled",
+  "ca_file": "C:\\Users\\Asus\\miniconda3\\envs\\bwgnn\\lib\\site-packages\\certifi\\cacert.pem",
+  "ca_sha256": "94edeb66e91774fcae93a05650914e29096259a5c7e871a1f65d461ab5201b47",
+  "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+  "runner_unchanged": true
+}

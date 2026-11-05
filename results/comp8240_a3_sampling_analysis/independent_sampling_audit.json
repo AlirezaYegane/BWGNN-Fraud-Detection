@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "new_fits": 18,
+  "new_epochs": 1800,
+  "recomputed_validation_test_primary_metric_values": 144,
+  "reused_reference_fits": 9,
+  "verified_validation_thresholds": 18,
+  "total_distinct_extension_fits": 128,
+  "total_extension_epochs": 12800,
+  "dataset_quality": [
+    {
+      "dataset_sha256": "94db5a8d15cd6f6a941488a91e9985d73c1cea35466d7afa213fcbde30bc2842",
+      "nodes": 49237,
+      "stored_edges": 931882,
+      "features": 18,
+      "supervised_roots": 5825,
+      "train": 2330,
+      "val": 1153,
+      "test": 2342,
+      "construction_seed": 1,
+      "status": "passed"
+    },
+    {
+      "dataset_sha256": "c256e71eaeafb65d609dca9283e24cb532b9a0e150d6540b9b0e896b3fa04473",
+      "nodes": 49256,
+      "stored_edges": 934528,
+      "features": 18,
+      "supervised_roots": 5825,
+      "train": 2330,
+      "val": 1153,
+      "test": 2342,
+      "construction_seed": 2,
+      "status": "passed"
+    }
+  ],
+  "construction_overlap": [
+    {
+      "construction_a": 0,
+      "construction_b": 1,
+      "shared_nodes": 17281,
+      "node_jaccard": 0.21287262872628726,
+      "shared_positive_roots": 1165,
+      "shared_positive_test_roots": 468,
+      "shared_supervised_roots": 1373,
+      "shared_test_roots": 503,
+      "shared_undirected_pairs": 274975,
+      "undirected_edge_jaccard": 0.4193693027313337,
+      "shared_node_raw_features_agree": true
+    },
+    {
+      "construction_a": 0,
+      "construction_b": 2,
+      "shared_nodes": 17258,
+      "node_jaccard": 0.2124793775085568,
+      "shared_positive_roots": 1165,
+      "shared_positive_test_roots": 468,
+      "shared_supervised_roots": 1349,
+      "shared_test_roots": 494,
+      "shared_undirected_pairs": 274110,
+      "undirected_edge_jaccard": 0.4166596997909937,
+      "shared_node_raw_features_agree": true
+    },
+    {
+      "construction_a": 1,
+      "construction_b": 2,
+      "shared_nodes": 17350,
+      "node_jaccard": 0.21382004609146815,
+      "shared_positive_roots": 1165,
+      "shared_positive_test_roots": 468,
+      "shared_supervised_roots": 1343,
+      "shared_test_roots": 490,
+      "shared_undirected_pairs": 277145,
+      "undirected_edge_jaccard": 0.4224384964789806,
+      "shared_node_raw_features_agree": true
+    }
+  ],
+  "paired_gaps": [
+    {
+      "construction_seed": 0,
+      "comparator": "gcn",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 5.2407757521190605,
+      "macro_f1_gap_sample_sd_pp": 0.7341242157182707,
+      "positive_pairs": 3
+    },
+    {
+      "construction_seed": 0,
+      "comparator": "mlp",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 5.520888697513822,
+      "macro_f1_gap_sample_sd_pp": 0.12493184069173945,
+      "positive_pairs": 3
+    },
+    {
+      "construction_seed": 1,
+      "comparator": "gcn",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 4.5513431588868185,
+      "macro_f1_gap_sample_sd_pp": 0.34551857611751496,
+      "positive_pairs": 3
+    },
+    {
+      "construction_seed": 1,
+      "comparator": "mlp",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 5.062452944319018,
+      "macro_f1_gap_sample_sd_pp": 0.5714543460691152,
+      "positive_pairs": 3
+    },
+    {
+      "construction_seed": 2,
+      "comparator": "gcn",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 4.893163192328835,
+      "macro_f1_gap_sample_sd_pp": 0.6937932236621442,
+      "positive_pairs": 3
+    },
+    {
+      "construction_seed": 2,
+      "comparator": "mlp",
+      "n": 3,
+      "macro_f1_gap_mean_pp": 6.815085586802031,
+      "macro_f1_gap_sample_sd_pp": 0.1357909742646565,
+      "positive_pairs": 3
+    }
+  ],
+  "baseline_in_overlap": true,
+  "new_training_during_audit": 0,
+  "limits": [
+    "Same released snapshot; all positive identities shared, not independent datasets.",
+    "Matching, context selection and possibly split membership vary jointly.",
+    "Three model seeds per construction here; primary seed0-construction core summary still uses five.",
+    "Default-width models differ in parameter count; capacity matching was checked separately on construction seed0.",
+    "Full-graph raw-feature reconstruction is not repeated from the 13.55M transactions in this score audit."
+  ]
+}

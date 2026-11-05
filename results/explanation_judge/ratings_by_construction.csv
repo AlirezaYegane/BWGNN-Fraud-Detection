@@ -1,0 +1,10 @@
+run,construction_kind,n,supported,partly_supported,speculative
+1,grounded_descriptive,8,8,0,0
+1,mixed_attribution_control,8,0,8,0
+1,unsupported_intent_control,8,0,0,8
+2,grounded_descriptive,8,8,0,0
+2,mixed_attribution_control,8,0,8,0
+2,unsupported_intent_control,8,0,0,8
+3,grounded_descriptive,8,8,0,0
+3,mixed_attribution_control,8,0,8,0
+3,unsupported_intent_control,8,0,0,8

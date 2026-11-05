@@ -1,0 +1,29 @@
+{
+  "run": 1,
+  "status": "verified",
+  "provider": "Google Gemini API",
+  "model_requested": "gemini-3.6-flash",
+  "model_version_returned": "gemini-3.6-flash",
+  "response_id": "qQLsasGWKoaj9tMP6MGG0Aw",
+  "usage_metadata": {
+    "promptTokenCount": 5427,
+    "candidatesTokenCount": 1992,
+    "totalTokenCount": 10913,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 5427
+      }
+    ],
+    "thoughtsTokenCount": 3494,
+    "serviceTier": "standard"
+  },
+  "submitted_utc": "2026-11-05T04:14:32.248038+00:00",
+  "completed_utc": "2026-11-05T04:15:21.002081+00:00",
+  "elapsed_seconds": 48.73399999993853,
+  "fresh_single_turn_request": true,
+  "finish_reason": "STOP",
+  "request_sha256": "c7bc16bc182c664e3a10e78e22a54b3fd89064a809b6b0788498eaa696537669",
+  "raw_response_sha256": "fde68b538d601450ae2682340b28658ec557aebe39c0694b01c6e4ad08caa253",
+  "ratings_sha256": "ddd0da5eb03947b9d325d9cd52cefa0e32eaa439f7df6843dda47fa8d742fb18"
+}

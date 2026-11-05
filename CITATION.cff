@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: "COMP8240: BWGNN reproduction, Ethereum evaluation and oracle camouflage"
+message: "Please cite the original BWGNN paper when using its model; this repository records the COMP8240 project extensions."
+type: software
+authors:
+  - family-names: Yegane
+    given-names: Alireza

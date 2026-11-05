@@ -1,0 +1,36 @@
+{
+  "sources_sha256_normalized_lf": {
+    "main.py": "1642e10e5c799ebd303bb20d66a991a55363276b35855996f5615eba0fd1ea13",
+    "dataset.py": "229b5e5101c63879264802f909e64396a49be694a8bb4815dfea201f9b78d1fb",
+    "BWGNN.py": "0ac45b1104f80fa17c50cd5e3bf9aa6241e008e6b57fdab9366ec69f80cb2f84",
+    "train_ethereum.py": "3283fd3c7351f7c2dc788711333895f2c98eeaa14b6cca809bb2f07365145330",
+    "run_amazon_camouflage.py": "91d30dffe99aa2015770929ca6dfd4698ab007d5517396cd0d54a09cd7928d6e"
+  },
+  "packages": {
+    "numpy": "1.23.5",
+    "torch": "1.9.0",
+    "dgl": "0.8.1",
+    "scipy": "1.10.1",
+    "scikit-learn": "1.3.2",
+    "sympy": "1.13.3",
+    "networkx": "3.1"
+  },
+  "datasets": {
+    "ethereum": {
+      "relative_path": "processed_results/ethereum_stage_20261008T121752622Z/ethereum_pilot_20261008T121753_615042Z/dataset.npz",
+      "sha256": "e1c261e30ddc70266829f5eebae65fab0c3e67facc69b8da7bc2adfd4a39bbd9",
+      "companion": "pipeline_manifest.json",
+      "companion_sha256": "1d331f8e88c7518a15da95c67547df5e681b0fc88d8ede58f28c53219d51b0eb"
+    },
+    "amazon": {
+      "relative_path": "audit_results/amazon_structure_stage_20261008T124532040Z/amazon_structure_20261008T124532_861136Z/amazon_compact.npz",
+      "sha256": "31be189110b98a8d39f46b99e261b2ed4ac454aba15af1d3ed7b6bd9d13c4334",
+      "companion": "amazon_graph_audit.json",
+      "companion_sha256": "5d0a19a0b32450d74a48e7d627b252ca082fcda8bcab17eba6f8a0048474f593"
+    }
+  },
+  "extension_sources_sha256_raw": {
+    "train_ethereum.py": "3283fd3c7351f7c2dc788711333895f2c98eeaa14b6cca809bb2f07365145330",
+    "run_amazon_camouflage.py": "91d30dffe99aa2015770929ca6dfd4698ab007d5517396cd0d54a09cd7928d6e"
+  }
+}

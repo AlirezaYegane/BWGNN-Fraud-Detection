@@ -1,0 +1,4 @@
+comparison,n,exact_agreement,cohen_kappa_unweighted
+1_vs_2,24,1.0,1.0
+1_vs_3,24,1.0,1.0
+2_vs_3,24,1.0,1.0

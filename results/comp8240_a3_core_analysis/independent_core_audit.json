@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "verified_model_fits": 75,
+  "verified_epochs": 7500,
+  "verified_selected_validation_thresholds": 75,
+  "recomputed_primary_metric_values": 600,
+  "independently_checked_graph_variants": 30,
+  "execution_elapsed_seconds": 8118.334063,
+  "parameter_counts": {
+    "ethereum/bwgnn": 17858,
+    "ethereum/gcn": 1346,
+    "ethereum/mlp": 5506,
+    "amazon/bwgnn": 18306,
+    "amazon/gcn": 1794
+  },
+  "paired_gap_summary": {
+    "camo_c0": {
+      "mean_pp": 23.59883018515074,
+      "sample_sd_pp": 0.6335625391597199
+    },
+    "camo_c0p8": {
+      "mean_pp": 27.239127080345277,
+      "sample_sd_pp": 0.8201212009178003
+    },
+    "random_control": {
+      "mean_pp": 23.709112206291337,
+      "sample_sd_pp": 1.2923598103225857
+    },
+    "gap_change_from_baseline_pp": {
+      "mean_pp": 3.640296895194531,
+      "sample_sd_pp": 1.0140717333010363,
+      "minimum_pp": 2.594178772777635,
+      "maximum_pp": 5.0151880125185215,
+      "positive_pairs": 5
+    },
+    "gap_change_from_max_random_control_pp": {
+      "mean_pp": 3.5300148740539328,
+      "sample_sd_pp": 1.1315730356572713,
+      "minimum_pp": 1.9028408037354723,
+      "maximum_pp": 5.082711015964758,
+      "positive_pairs": 5
+    }
+  },
+  "new_training_runs_performed_during_audit": 0,
+  "interpretation_limits": [
+    "Five model initialisations on one sampled Ethereum graph.",
+    "Amazon construction and model seeds paired, not crossed.",
+    "Oracle construction uses labels from all supervised splits.",
+    "Random control matches maximum swaps only.",
+    "Core models differ in capacity and Ethereum self-loop handling.",
+    "A larger performance gap and spectral-energy change do not establish a causal spectral mechanism."
+  ]
+}

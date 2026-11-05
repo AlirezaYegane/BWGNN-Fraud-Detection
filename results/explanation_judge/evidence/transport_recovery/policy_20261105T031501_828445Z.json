@@ -1,0 +1,10 @@
+{
+  "policy": "Up to 2 backoff retries per logical request, only explicit HTTP 503 UNAVAILABLE with no output. Preserve every failure. Never retry accepted, invalid or uncertain responses.",
+  "model_and_frozen_prompts": "unchanged",
+  "ca_file": "C:\\Users\\Asus\\miniconda3\\envs\\bwgnn\\lib\\site-packages\\certifi\\cacert.pem",
+  "ca_sha256": "94edeb66e91774fcae93a05650914e29096259a5c7e871a1f65d461ab5201b47",
+  "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+  "certificate_and_hostname_verification": true,
+  "earlier_failures": "preserved in transport_failures",
+  "protocol_addendum": "Transport retry policy introduced after observed service overload, before any accepted judgment."
+}

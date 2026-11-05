@@ -1,0 +1,4 @@
+construction_a,construction_b,shared_nodes,node_jaccard,shared_positive_roots,shared_positive_test_roots,shared_supervised_roots,shared_test_roots,shared_undirected_pairs,undirected_edge_jaccard,shared_node_raw_features_agree
+0,1,17281,0.21287262872628726,1165,468,1373,503,274975,0.4193693027313337,True
+0,2,17258,0.2124793775085568,1165,468,1349,494,274110,0.4166596997909937,True
+1,2,17350,0.21382004609146815,1165,468,1343,490,277145,0.4224384964789806,True

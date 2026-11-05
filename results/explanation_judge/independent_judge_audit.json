@@ -1,0 +1,64 @@
+{
+  "audit_status": "PASS",
+  "input_zip_sha256": "e8cbdc347e2d3195ab7e2afcb8f7faa3ff53f69e80a74a1891d45585c75a3add",
+  "zip_member_count": 45,
+  "verified_runs": 3,
+  "ratings_per_run": 24,
+  "total_ratings": 72,
+  "unique_cases": 8,
+  "unique_texts": 24,
+  "model_requested_and_returned": "gemini-3.6-flash",
+  "response_ids_unique": true,
+  "distinct_presentation_orders": 3,
+  "all_raw_response_and_request_hashes_match": true,
+  "all_citations_reference_correct_case": true,
+  "frozen_inputs_match_released_package": true,
+  "frozen_inputs_regenerated_from_primary_data": true,
+  "construction_mapping_matches_generator": true,
+  "per_run_counts": {
+    "1": {
+      "supported": 8,
+      "partly_supported": 8,
+      "speculative": 8
+    },
+    "2": {
+      "supported": 8,
+      "partly_supported": 8,
+      "speculative": 8
+    },
+    "3": {
+      "supported": 8,
+      "partly_supported": 8,
+      "speculative": 8
+    }
+  },
+  "pairwise_agreement": {
+    "1_vs_2": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    },
+    "1_vs_3": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    },
+    "2_vs_3": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    }
+  },
+  "token_usage_successful_responses": {
+    "promptTokenCount": 16281,
+    "candidatesTokenCount": 6067,
+    "thoughtsTokenCount": 12887,
+    "totalTokenCount": 35235
+  },
+  "recorded_http503_files": 5,
+  "archived_failure_states": 2,
+  "transport_note": "HTTP error logs and failed batch states overlap; they are not additional judgments. Successful outputs only determine n=3.",
+  "secret_pattern_scan": "PASS; common full-key formats not found; not a proof of absence of every possible secret format.",
+  "human_comparison": "Not computed. Earlier review draft was AI-assisted, not independently completed human annotation.",
+  "inference_limit": "Perfect repeat agreement on these 24 templated texts is not fraud-detection accuracy, explanation faithfulness, causal validation, or independent-human agreement."
+}

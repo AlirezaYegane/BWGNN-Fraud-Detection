@@ -1,0 +1,149 @@
+{
+  "protocol_version": 2,
+  "transport": "Gemini REST generateContent, independent single-turn requests",
+  "model_requested": "gemini-3.6-flash",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
+  "runs": [
+    1,
+    2,
+    3
+  ],
+  "items_per_run": 24,
+  "frozen_input_sha256": {
+    "BLINDED_CASES.json": "4b41bed894b31b92a8a55d3a7eef94728288b7e41694893fac0f6d10cef6ef6f",
+    "JUDGE_RUN_1.md": "91f78c3b002768a5775b8ee05c40d26166c5bcfd716698411b74511054d20f52",
+    "JUDGE_RUN_2.md": "46e31c5f63589d844a963ab388944361e73fde432e781b04921b6d22a99fee1d",
+    "JUDGE_RUN_3.md": "cdf14806503518145a339f06f44027a1f2c2e9db20a29c5f1c28adcac9436dca"
+  },
+  "max_output_tokens": 8192,
+  "temperature": "not set; Gemini 3.6+ does not support controlling temperature",
+  "seed": "not set",
+  "conversation_history": false,
+  "tools_enabled": false,
+  "structured_output_schema": {
+    "type": "object",
+    "properties": {
+      "ratings": {
+        "type": "array",
+        "minItems": 24,
+        "maxItems": 24,
+        "items": {
+          "type": "object",
+          "properties": {
+            "item_id": {
+              "type": "string",
+              "enum": [
+                "J001",
+                "J002",
+                "J003",
+                "J004",
+                "J005",
+                "J006",
+                "J007",
+                "J008",
+                "J009",
+                "J010",
+                "J011",
+                "J012",
+                "J013",
+                "J014",
+                "J015",
+                "J016",
+                "J017",
+                "J018",
+                "J019",
+                "J020",
+                "J021",
+                "J022",
+                "J023",
+                "J024"
+              ]
+            },
+            "rating": {
+              "type": "string",
+              "enum": [
+                "supported",
+                "partly_supported",
+                "speculative"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "C01.E1",
+                  "C01.E2",
+                  "C01.E3",
+                  "C01.E4",
+                  "C01.E5",
+                  "C01.E6",
+                  "C02.E1",
+                  "C02.E2",
+                  "C02.E3",
+                  "C02.E4",
+                  "C02.E5",
+                  "C02.E6",
+                  "C03.E1",
+                  "C03.E2",
+                  "C03.E3",
+                  "C03.E4",
+                  "C03.E5",
+                  "C03.E6",
+                  "C04.E1",
+                  "C04.E2",
+                  "C04.E3",
+                  "C04.E4",
+                  "C04.E5",
+                  "C04.E6",
+                  "C05.E1",
+                  "C05.E2",
+                  "C05.E3",
+                  "C05.E4",
+                  "C05.E5",
+                  "C05.E6",
+                  "C06.E1",
+                  "C06.E2",
+                  "C06.E3",
+                  "C06.E4",
+                  "C06.E5",
+                  "C06.E6",
+                  "C07.E1",
+                  "C07.E2",
+                  "C07.E3",
+                  "C07.E4",
+                  "C07.E5",
+                  "C07.E6",
+                  "C08.E1",
+                  "C08.E2",
+                  "C08.E3",
+                  "C08.E4",
+                  "C08.E5",
+                  "C08.E6"
+                ]
+              }
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "item_id",
+            "rating",
+            "evidence_ids",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "ratings"
+    ],
+    "additionalProperties": false
+  },
+  "runner_sha256": "1c5584a16d59b098288a435279b09ee77adfeb21bada2826dff2b1764d187934",
+  "change_from_prepared_method": "API execution replaces manual fresh-chat transport. Frozen item text, rubric and run order remain unchanged. Structured output constraints added before execution.",
+  "reference_status": "Earlier 12-item review draft generated with AI assistance; no independent human agreement is claimed."
+}

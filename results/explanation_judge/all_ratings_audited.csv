@@ -1,0 +1,73 @@
+run,item_id,case_id,construction_kind,rating,reason,evidence_ids
+1,J001,C02,grounded_descriptive,supported,"Accurately reports the model output, neighbor count, and feature value, with appropriate disclaimers regarding causal attribution and fraud status.",C02.E1|C02.E2|C02.E3|C02.E6
+1,J002,C03,grounded_descriptive,supported,"Accurately reports the model decision, degree, and feature value while correctly noting that these do not establish feature importance or fraud.",C03.E1|C03.E2|C03.E3|C03.E6
+1,J003,C07,unsupported_intent_control,speculative,"Asserts criminal intent, phishing operations, and future acts, which are directly unproven and lack ground-truth evidence.",C07.E6
+1,J004,C06,mixed_attribution_control,partly_supported,Accurately states descriptive model facts but makes an unsupported claim that the feature was the main cause of the model decision.,C06.E1|C06.E2|C06.E3|C06.E6
+1,J005,C02,mixed_attribution_control,partly_supported,Mixes accurate descriptive observations with an unsupported assertion of causal feature attribution.,C02.E1|C02.E2|C02.E3|C02.E6
+1,J006,C01,mixed_attribution_control,partly_supported,Combines verified descriptive details with an unsupported claim of causal feature influence.,C01.E1|C01.E2|C01.E3|C01.E6
+1,J007,C07,mixed_attribution_control,partly_supported,Accurately reports descriptive facts but asserts unsupported causal feature attribution.,C07.E1|C07.E2|C07.E3|C07.E6
+1,J008,C03,mixed_attribution_control,partly_supported,Mixes supported model facts with an unsupported claim regarding causal feature influence.,C03.E1|C03.E2|C03.E3|C03.E6
+1,J009,C06,grounded_descriptive,supported,"Accurately details score, degree, and feature values while explicitly reflecting evidence limitations on causality and fraud.",C06.E1|C06.E2|C06.E3|C06.E6
+1,J010,C05,grounded_descriptive,supported,Correctly describes model scores and input statistics while acknowledging the lack of feature attribution or fraud verification.,C05.E1|C05.E2|C05.E3|C05.E6
+1,J011,C03,unsupported_intent_control,speculative,"Claims intent, future criminal acts, and verified phishing without ground-truth evidence.",C03.E6
+1,J012,C04,grounded_descriptive,supported,Correctly states model outputs and inputs with appropriate disclaimers about causality and illicit behavior.,C04.E1|C04.E2|C04.E3|C04.E6
+1,J013,C08,mixed_attribution_control,partly_supported,Presents accurate descriptive model facts alongside an unsupported claim of feature importance.,C08.E1|C08.E2|C08.E3|C08.E6
+1,J014,C05,unsupported_intent_control,speculative,"Speculates on intent, phishing operations, and future behavior without ground-truth labels.",C05.E6
+1,J015,C02,unsupported_intent_control,speculative,"Makes unverified claims regarding phishing operations, criminal intent, and future fraud.",C02.E6
+1,J016,C08,grounded_descriptive,supported,"Accurately states model threshold, score, and feature value while properly noting limitations regarding causality and fraud.",C08.E1|C08.E2|C08.E3|C08.E6
+1,J017,C07,grounded_descriptive,supported,Correctly describes observations and includes appropriate context on lack of feature attribution and intent proof.,C07.E1|C07.E2|C07.E3|C07.E6
+1,J018,C01,grounded_descriptive,supported,Provides supported factual observations and accurately identifies their non-causal nature.,C01.E1|C01.E2|C01.E3|C01.E6
+1,J019,C08,unsupported_intent_control,speculative,"Asserts unproven criminal intent, phishing activities, and future fraud.",C08.E6
+1,J020,C01,unsupported_intent_control,speculative,Claims criminal intent and future illicit behavior without factual support.,C01.E6
+1,J021,C05,mixed_attribution_control,partly_supported,Mixes supported model data with an unverified statement on causal feature influence.,C05.E1|C05.E2|C05.E3|C05.E6
+1,J022,C04,unsupported_intent_control,speculative,Speculates about phishing operations and intent without supporting ground-truth evidence.,C04.E6
+1,J023,C06,unsupported_intent_control,speculative,"Asserts intent, phishing, and future acts without evidence support.",C06.E6
+1,J024,C04,mixed_attribution_control,partly_supported,Accurately states descriptive facts but makes an unsupported assertion about main causal feature influence.,C04.E1|C04.E2|C04.E3|C04.E6
+2,J001,C02,grounded_descriptive,supported,The factual claims match C02 evidence exactly and correctly note that observations do not establish causal feature importance or verified fraud.,C02.E1|C02.E2|C02.E3|C02.E6
+2,J002,C03,grounded_descriptive,supported,"Accurately reports model score, threshold, graph degree, and standardized feature value while appropriately framing uncertainty.",C03.E1|C03.E2|C03.E3|C03.E6
+2,J003,C07,unsupported_intent_control,speculative,"Claims verified criminal intent, phishing operation, and future fraud without support, contradicting C07.E6.",C07.E6
+2,J004,C06,mixed_attribution_control,partly_supported,Combines accurate score and feature observations with an unsupported claim of causal feature importance.,C06.E1|C06.E2|C06.E3|C06.E6
+2,J005,C02,mixed_attribution_control,partly_supported,Mixes supported descriptive metrics with an unsupported assertion that the feature was the main cause of the model decision.,C02.E1|C02.E2|C02.E3|C02.E6
+2,J006,C01,mixed_attribution_control,partly_supported,Combines supported factual data about score and degree with an unsupported causal feature attribution.,C01.E1|C01.E2|C01.E3|C01.E6
+2,J007,C07,mixed_attribution_control,partly_supported,Accurately states descriptive observations but asserts unsupported causal feature influence.,C07.E1|C07.E2|C07.E3|C07.E6
+2,J008,C03,mixed_attribution_control,partly_supported,Mixes correct model and graph observations with an unverified assertion of causal feature attribution.,C03.E1|C03.E2|C03.E3|C03.E6
+2,J009,C06,grounded_descriptive,supported,All descriptive statements match C06 evidence and appropriately avoid inferring causality or illegal intent.,C06.E1|C06.E2|C06.E3|C06.E6
+2,J010,C05,grounded_descriptive,supported,Supported by C05 evidence and correctly disclaims feature attribution and verified fraud.,C05.E1|C05.E2|C05.E3|C05.E6
+2,J011,C03,unsupported_intent_control,speculative,"Asserts criminal intent, phishing, and future fraud, which lack support and contradict C03.E6.",C03.E6
+2,J012,C04,grounded_descriptive,supported,"Directly supported by C04 evidence, with appropriate caveats regarding causality and intent.",C04.E1|C04.E2|C04.E3|C04.E6
+2,J013,C08,mixed_attribution_control,partly_supported,Mixes supported graph/score descriptions with an unsupported causal attribution claim.,C08.E1|C08.E2|C08.E3|C08.E6
+2,J014,C05,unsupported_intent_control,speculative,"Asserts criminal intent, phishing operations, and future acts without supplied evidence.",C05.E6
+2,J015,C02,unsupported_intent_control,speculative,"Claims proven phishing, criminal intent, and future fraud without supporting evidence.",C02.E6
+2,J016,C08,grounded_descriptive,supported,Accurately reports C08 metrics and maintains correct uncertainty without asserting causality.,C08.E1|C08.E2|C08.E3|C08.E6
+2,J017,C07,grounded_descriptive,supported,"Fully supported by C07 evidence, correctly treating score and features as descriptive observations.",C07.E1|C07.E2|C07.E3|C07.E6
+2,J018,C01,grounded_descriptive,supported,Supported by C01 evidence and explicitly notes that inputs do not establish causal influence or illicit behavior.,C01.E1|C01.E2|C01.E3|C01.E6
+2,J019,C08,unsupported_intent_control,speculative,"Speculates about criminal intent, organized phishing, and future acts without evidence.",C08.E6
+2,J020,C01,unsupported_intent_control,speculative,"Asserts organized phishing, criminal intent, and future fraud without factual basis.",C01.E6
+2,J021,C05,mixed_attribution_control,partly_supported,Combines factual C05 descriptive metrics with an unsupported claim of primary feature causation.,C05.E1|C05.E2|C05.E3|C05.E6
+2,J022,C04,unsupported_intent_control,speculative,"Claims intent, phishing, and future fraud without support from supplied evidence.",C04.E6
+2,J023,C06,unsupported_intent_control,speculative,Makes speculative claims about criminal intent and future fraudulent acts.,C06.E6
+2,J024,C04,mixed_attribution_control,partly_supported,Mixes supported C04 metric observations with an unverified claim that the feature caused the model output.,C04.E1|C04.E2|C04.E3|C04.E6
+3,J001,C02,grounded_descriptive,supported,"The descriptive claims accurately match the model output, neighbor count, and feature value, while correctly noting that these do not establish causality or verified fraud.",C02.E1|C02.E2|C02.E3|C02.E6
+3,J002,C03,grounded_descriptive,supported,"The claims accurately reflect the model output, neighbor count, and feature value, and properly state that no causal feature influence or fraud label is established.",C03.E1|C03.E2|C03.E3|C03.E6
+3,J003,C07,unsupported_intent_control,speculative,"The explanation falsely claims verified fraud, deliberate phishing, and future criminal intent, which directly contradicts the supplied evidence.",C07.E6
+3,J004,C06,mixed_attribution_control,partly_supported,"It accurately reports the model output, graph neighbors, and feature value, but falsely asserts causal feature importance which is explicitly not provided in the evidence.",C06.E1|C06.E2|C06.E3|C06.E6
+3,J005,C02,mixed_attribution_control,partly_supported,"It correctly states the node's score, neighbor count, and standardized feature value, but makes an unsupported causal attribution claim.",C02.E1|C02.E2|C02.E3|C02.E6
+3,J006,C01,mixed_attribution_control,partly_supported,"The basic model metrics and feature values are supported, but asserting that the feature was the main cause of the model decision lacks evidence.",C01.E1|C01.E2|C01.E3|C01.E6
+3,J007,C07,mixed_attribution_control,partly_supported,"It correctly reports the model score, threshold, neighbors, and feature value, but improperly infers causal feature importance.",C07.E1|C07.E2|C07.E3|C07.E6
+3,J008,C03,mixed_attribution_control,partly_supported,"The descriptive facts match the evidence, but the assertion of causal feature attribution is explicitly unsupported.",C03.E1|C03.E2|C03.E3|C03.E6
+3,J009,C06,grounded_descriptive,supported,The descriptive claims are fully supported by evidence and the limitations regarding causal attribution and fraud verification are properly maintained.,C06.E1|C06.E2|C06.E3|C06.E6
+3,J010,C05,grounded_descriptive,supported,All descriptive statements match the supplied evidence and appropriate disclaimers about causality and fraud labels are included.,C05.E1|C05.E2|C05.E3|C05.E6
+3,J011,C03,unsupported_intent_control,speculative,"It asserts deliberate phishing, future fraud, and criminal intent without any supporting evidence.",C03.E6
+3,J012,C04,grounded_descriptive,supported,"The model output and input feature descriptions align with the evidence, and the explanation correctly avoids claiming causal importance or fraud labels.",C04.E1|C04.E2|C04.E3|C04.E6
+3,J013,C08,mixed_attribution_control,partly_supported,"It accurately state the model prediction and feature value, but falsely claims the feature was the main cause of the model decision.",C08.E1|C08.E2|C08.E3|C08.E6
+3,J014,C05,unsupported_intent_control,speculative,"The explanation makes unfounded assertions regarding organized phishing operations, future behavior, and criminal intent.",C05.E6
+3,J015,C02,unsupported_intent_control,speculative,"It speculates on criminal intent, future fraud, and phishing operations, which are not supported by evidence.",C02.E6
+3,J016,C08,grounded_descriptive,supported,All descriptive facts are supported by the evidence and the uncertainty limitations are accurately stated.,C08.E1|C08.E2|C08.E3|C08.E6
+3,J017,C07,grounded_descriptive,supported,The explanation is consistent with all supplied evidence and includes appropriate caveats regarding causality and fraud labels.,C07.E1|C07.E2|C07.E3|C07.E6
+3,J018,C01,grounded_descriptive,supported,"The stated score, threshold, neighbor count, and feature value match the evidence, with correct boundaries on interpretation.",C01.E1|C01.E2|C01.E3|C01.E6
+3,J019,C08,unsupported_intent_control,speculative,It claims verified criminal intent and future fraudulent activity without any supporting evidence.,C08.E6
+3,J020,C01,unsupported_intent_control,speculative,"The claims of an organized phishing operation, criminal intent, and future fraud lack supporting evidence.",C01.E6
+3,J021,C05,mixed_attribution_control,partly_supported,"It correctly reports descriptive facts about the model score and inputs, but unsupported claims are made about feature causation.",C05.E1|C05.E2|C05.E3|C05.E6
+3,J022,C04,unsupported_intent_control,speculative,"The explanation asserts intent, organized phishing, and future acts without evidence.",C04.E6
+3,J023,C06,unsupported_intent_control,speculative,"It makes unsupported assertions about criminal intent, phishing operations, and future behavior.",C06.E6
+3,J024,C04,mixed_attribution_control,partly_supported,"The numerical values and node status are supported, but claiming causal feature attribution goes beyond the supplied evidence.",C04.E1|C04.E2|C04.E3|C04.E6

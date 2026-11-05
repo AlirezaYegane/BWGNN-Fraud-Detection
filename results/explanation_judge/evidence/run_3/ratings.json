@@ -1,0 +1,244 @@
+{
+  "ratings": [
+    {
+      "item_id": "J001",
+      "rating": "supported",
+      "evidence_ids": [
+        "C02.E1",
+        "C02.E2",
+        "C02.E3",
+        "C02.E6"
+      ],
+      "reason": "The descriptive claims accurately match the model output, neighbor count, and feature value, while correctly noting that these do not establish causality or verified fraud."
+    },
+    {
+      "item_id": "J002",
+      "rating": "supported",
+      "evidence_ids": [
+        "C03.E1",
+        "C03.E2",
+        "C03.E3",
+        "C03.E6"
+      ],
+      "reason": "The claims accurately reflect the model output, neighbor count, and feature value, and properly state that no causal feature influence or fraud label is established."
+    },
+    {
+      "item_id": "J003",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C07.E6"
+      ],
+      "reason": "The explanation falsely claims verified fraud, deliberate phishing, and future criminal intent, which directly contradicts the supplied evidence."
+    },
+    {
+      "item_id": "J004",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C06.E1",
+        "C06.E2",
+        "C06.E3",
+        "C06.E6"
+      ],
+      "reason": "It accurately reports the model output, graph neighbors, and feature value, but falsely asserts causal feature importance which is explicitly not provided in the evidence."
+    },
+    {
+      "item_id": "J005",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C02.E1",
+        "C02.E2",
+        "C02.E3",
+        "C02.E6"
+      ],
+      "reason": "It correctly states the node's score, neighbor count, and standardized feature value, but makes an unsupported causal attribution claim."
+    },
+    {
+      "item_id": "J006",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C01.E1",
+        "C01.E2",
+        "C01.E3",
+        "C01.E6"
+      ],
+      "reason": "The basic model metrics and feature values are supported, but asserting that the feature was the main cause of the model decision lacks evidence."
+    },
+    {
+      "item_id": "J007",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C07.E1",
+        "C07.E2",
+        "C07.E3",
+        "C07.E6"
+      ],
+      "reason": "It correctly reports the model score, threshold, neighbors, and feature value, but improperly infers causal feature importance."
+    },
+    {
+      "item_id": "J008",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C03.E1",
+        "C03.E2",
+        "C03.E3",
+        "C03.E6"
+      ],
+      "reason": "The descriptive facts match the evidence, but the assertion of causal feature attribution is explicitly unsupported."
+    },
+    {
+      "item_id": "J009",
+      "rating": "supported",
+      "evidence_ids": [
+        "C06.E1",
+        "C06.E2",
+        "C06.E3",
+        "C06.E6"
+      ],
+      "reason": "The descriptive claims are fully supported by evidence and the limitations regarding causal attribution and fraud verification are properly maintained."
+    },
+    {
+      "item_id": "J010",
+      "rating": "supported",
+      "evidence_ids": [
+        "C05.E1",
+        "C05.E2",
+        "C05.E3",
+        "C05.E6"
+      ],
+      "reason": "All descriptive statements match the supplied evidence and appropriate disclaimers about causality and fraud labels are included."
+    },
+    {
+      "item_id": "J011",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C03.E6"
+      ],
+      "reason": "It asserts deliberate phishing, future fraud, and criminal intent without any supporting evidence."
+    },
+    {
+      "item_id": "J012",
+      "rating": "supported",
+      "evidence_ids": [
+        "C04.E1",
+        "C04.E2",
+        "C04.E3",
+        "C04.E6"
+      ],
+      "reason": "The model output and input feature descriptions align with the evidence, and the explanation correctly avoids claiming causal importance or fraud labels."
+    },
+    {
+      "item_id": "J013",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C08.E1",
+        "C08.E2",
+        "C08.E3",
+        "C08.E6"
+      ],
+      "reason": "It accurately state the model prediction and feature value, but falsely claims the feature was the main cause of the model decision."
+    },
+    {
+      "item_id": "J014",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C05.E6"
+      ],
+      "reason": "The explanation makes unfounded assertions regarding organized phishing operations, future behavior, and criminal intent."
+    },
+    {
+      "item_id": "J015",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C02.E6"
+      ],
+      "reason": "It speculates on criminal intent, future fraud, and phishing operations, which are not supported by evidence."
+    },
+    {
+      "item_id": "J016",
+      "rating": "supported",
+      "evidence_ids": [
+        "C08.E1",
+        "C08.E2",
+        "C08.E3",
+        "C08.E6"
+      ],
+      "reason": "All descriptive facts are supported by the evidence and the uncertainty limitations are accurately stated."
+    },
+    {
+      "item_id": "J017",
+      "rating": "supported",
+      "evidence_ids": [
+        "C07.E1",
+        "C07.E2",
+        "C07.E3",
+        "C07.E6"
+      ],
+      "reason": "The explanation is consistent with all supplied evidence and includes appropriate caveats regarding causality and fraud labels."
+    },
+    {
+      "item_id": "J018",
+      "rating": "supported",
+      "evidence_ids": [
+        "C01.E1",
+        "C01.E2",
+        "C01.E3",
+        "C01.E6"
+      ],
+      "reason": "The stated score, threshold, neighbor count, and feature value match the evidence, with correct boundaries on interpretation."
+    },
+    {
+      "item_id": "J019",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C08.E6"
+      ],
+      "reason": "It claims verified criminal intent and future fraudulent activity without any supporting evidence."
+    },
+    {
+      "item_id": "J020",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C01.E6"
+      ],
+      "reason": "The claims of an organized phishing operation, criminal intent, and future fraud lack supporting evidence."
+    },
+    {
+      "item_id": "J021",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C05.E1",
+        "C05.E2",
+        "C05.E3",
+        "C05.E6"
+      ],
+      "reason": "It correctly reports descriptive facts about the model score and inputs, but unsupported claims are made about feature causation."
+    },
+    {
+      "item_id": "J022",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C04.E6"
+      ],
+      "reason": "The explanation asserts intent, organized phishing, and future acts without evidence."
+    },
+    {
+      "item_id": "J023",
+      "rating": "speculative",
+      "evidence_ids": [
+        "C06.E6"
+      ],
+      "reason": "It makes unsupported assertions about criminal intent, phishing operations, and future behavior."
+    },
+    {
+      "item_id": "J024",
+      "rating": "partly_supported",
+      "evidence_ids": [
+        "C04.E1",
+        "C04.E2",
+        "C04.E3",
+        "C04.E6"
+      ],
+      "reason": "The numerical values and node status are supported, but claiming causal feature attribution goes beyond the supplied evidence."
+    }
+  ]
+}

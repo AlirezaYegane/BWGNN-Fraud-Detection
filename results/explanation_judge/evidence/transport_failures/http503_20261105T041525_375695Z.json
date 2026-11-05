@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-11-05T04:15:25.375695+00:00",
+  "method": "POST",
+  "path": "/models/gemini-3.6-flash:generateContent",
+  "attempt_in_this_call": 1,
+  "http_status": 503,
+  "response_body": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+  "retry_delay_seconds": 22.651259603296097,
+  "judgment_received": false
+}

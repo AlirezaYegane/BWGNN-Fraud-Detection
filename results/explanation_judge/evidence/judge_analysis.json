@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "verified_runs": 3,
+  "verified_ratings": 72,
+  "per_run_proportions": {
+    "1": {
+      "supported": 0.3333333333333333,
+      "partly_supported": 0.3333333333333333,
+      "speculative": 0.3333333333333333
+    },
+    "2": {
+      "supported": 0.3333333333333333,
+      "partly_supported": 0.3333333333333333,
+      "speculative": 0.3333333333333333
+    },
+    "3": {
+      "supported": 0.3333333333333333,
+      "partly_supported": 0.3333333333333333,
+      "speculative": 0.3333333333333333
+    }
+  },
+  "pairwise_agreement": {
+    "1_vs_2": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    },
+    "1_vs_3": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    },
+    "2_vs_3": {
+      "n": 24,
+      "exact_agreement": 1.0,
+      "cohen_kappa_unweighted": 1.0
+    }
+  },
+  "human_comparison": "Not computed: the earlier 12-item draft was AI-assisted, not an independent human reference.",
+  "limits": [
+    "One LLM, three independent single-turn requests with different frozen presentation orders; not three independent models.",
+    "Constructed descriptive texts and unsupported-claim controls; not BWGNN-native or causal explanations.",
+    "Repeated judgments and within-case variants are dependent; exploratory support/consistency evaluation only."
+  ],
+  "run_metadata": [
+    {
+      "run": 1,
+      "status": "verified",
+      "provider": "Google Gemini API",
+      "model_requested": "gemini-3.6-flash",
+      "model_version_returned": "gemini-3.6-flash",
+      "response_id": "qQLsasGWKoaj9tMP6MGG0Aw",
+      "usage_metadata": {
+        "promptTokenCount": 5427,
+        "candidatesTokenCount": 1992,
+        "totalTokenCount": 10913,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 5427
+          }
+        ],
+        "thoughtsTokenCount": 3494,
+        "serviceTier": "standard"
+      },
+      "submitted_utc": "2026-11-05T04:14:32.248038+00:00",
+      "completed_utc": "2026-11-05T04:15:21.002081+00:00",
+      "elapsed_seconds": 48.73399999993853,
+      "fresh_single_turn_request": true,
+      "finish_reason": "STOP",
+      "request_sha256": "c7bc16bc182c664e3a10e78e22a54b3fd89064a809b6b0788498eaa696537669",
+      "raw_response_sha256": "fde68b538d601450ae2682340b28658ec557aebe39c0694b01c6e4ad08caa253",
+      "ratings_sha256": "ddd0da5eb03947b9d325d9cd52cefa0e32eaa439f7df6843dda47fa8d742fb18"
+    },
+    {
+      "run": 2,
+      "status": "verified",
+      "provider": "Google Gemini API",
+      "model_requested": "gemini-3.6-flash",
+      "model_version_returned": "gemini-3.6-flash",
+      "response_id": "9QLsavvVGbm-vr0P6t2wsQ4",
+      "usage_metadata": {
+        "promptTokenCount": 5427,
+        "candidatesTokenCount": 1993,
+        "totalTokenCount": 11936,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 5427
+          }
+        ],
+        "thoughtsTokenCount": 4516,
+        "serviceTier": "standard"
+      },
+      "submitted_utc": "2026-11-05T04:15:21.035258+00:00",
+      "completed_utc": "2026-11-05T04:16:18.499482+00:00",
+      "elapsed_seconds": 57.45300000021234,
+      "fresh_single_turn_request": true,
+      "finish_reason": "STOP",
+      "request_sha256": "ce1f06ce248e30158a49a9e3f3fe9bc67704cefa135b7008d521c9fb1fc94ede",
+      "raw_response_sha256": "a4902c9f5d260a790a7a2626ed99f10fe5a64f2083b9be9d1f4bd25192f27608",
+      "ratings_sha256": "8e76d681980c26b6448a2d4309275a90551d1956121ed228e8eb14c75d7bab2b"
+    },
+    {
+      "run": 3,
+      "status": "verified",
+      "provider": "Google Gemini API",
+      "model_requested": "gemini-3.6-flash",
+      "model_version_returned": "gemini-3.6-flash",
+      "response_id": "XwPsarfXJZD01e8PhZCtwAo",
+      "usage_metadata": {
+        "promptTokenCount": 5427,
+        "candidatesTokenCount": 2082,
+        "totalTokenCount": 12386,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 5427
+          }
+        ],
+        "thoughtsTokenCount": 4877,
+        "serviceTier": "standard"
+      },
+      "submitted_utc": "2026-11-05T04:16:18.525358+00:00",
+      "completed_utc": "2026-11-05T04:18:07.618214+00:00",
+      "elapsed_seconds": 109.0930000001099,
+      "fresh_single_turn_request": true,
+      "finish_reason": "STOP",
+      "request_sha256": "7ca77ac2132be86a295551b3e2d1edd86fb808fbc19c25c91acab43904b4a324",
+      "raw_response_sha256": "9072de83c9ff34fc521a9d76c1257bcf1b421903c6c405fb7ce227f1baf7d0e5",
+      "ratings_sha256": "5b17d3b20e5c93a1ac11c6daf8f07b1a568ca8a2b0a0812074c96e33efb4ccc0"
+    }
+  ]
+}

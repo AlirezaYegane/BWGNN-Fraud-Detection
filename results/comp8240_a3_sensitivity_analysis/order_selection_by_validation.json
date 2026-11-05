@@ -1,0 +1,23 @@
+{
+  "criterion": "Mean validation Macro-F1 across five seeds; first/smallest order wins exact ties. No test metric used.",
+  "candidates": [
+    {
+      "order": 1,
+      "mean_validation_macro_f1": 0.9426533012519647
+    },
+    {
+      "order": 2,
+      "mean_validation_macro_f1": 0.9427473786412275
+    },
+    {
+      "order": 3,
+      "mean_validation_macro_f1": 0.9425143805830221
+    },
+    {
+      "order": 5,
+      "mean_validation_macro_f1": 0.943624656129041
+    }
+  ],
+  "selected_order": 5,
+  "scope": "Secondary sensitivity; primary core results remain C=2."
+}

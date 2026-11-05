@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "checks": [
+    "Python 3.8 syntax",
+    "Audited original source fingerprints"
+  ],
+  "scientific_retraining": false,
+  "core_fits": 75,
+  "sensitivity_fits": 35,
+  "runtime_model_checks": "Passed on actual Windows Python 3.8.20; see WINDOWS_RUNTIME_VALIDATION.json. Receipt covers preprocessing, original-loop instrumentation, three-model CPU checks and 75 core plus35 sensitivity fits.",
+  "additional_checks": [
+    "Four workflow tests: blank/duplicated ratings rejection; ID-based agreement; complete synthetic rating pipeline; interrupted sampling resume and protocol locks.",
+    "Actual archived Ethereum dataset: splits, simple symmetric adjacency, standardizer and scaled features independently checked.",
+    "Actual preprocessor toy self-check executed on this host.",
+    "All 30 Amazon mixing scopes independently recomputed from compact data and swap traces."
+  ],
+  "public_staging_checks": {
+    "status": "passed",
+    "tracked_files": 179,
+    "raw_data_checkpoints_and_bootstrapped_originals_excluded": true
+  },
+  "sampling_fits_verified": 18,
+  "total_distinct_extension_fits": 128,
+  "actual_windows_logs_observed": [
+    "Preprocessing self-check PASS",
+    "Three actual models, optimizer, checkpoint restoration and masked context self-check PASS"
+  ],
+  "gemini_judge_evidence": {
+    "status": "independent audit PASS",
+    "runs": 3,
+    "ratings": 72,
+    "unique_texts": 24,
+    "unique_cases": 8,
+    "pairwise_exact_agreement": 1.0,
+    "unweighted_cohen_kappa": 1.0,
+    "four_frozen_inputs_regenerated_exactly": true,
+    "human_validation": "Not independently completed; earlier draft AI-assisted",
+    "no_new_api_or_training_calls_during_audit": true
+  },
+  "windows_runtime_receipt_sha256": "9bf725a8746e62d24f8450674345f0673c53993b779f86959ed9302d9176446c"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "prepared_not_executed",
+  "case_count": 8,
+  "explanations_per_case": 3,
+  "judge_items_per_run": 24,
+  "judge_runs_planned": 3,
+  "human_items_planned": 12,
+  "case_selection": "Fixed primary Ethereum BWGNN C2 width64 seed0 test predictions. Two cases from each predicted-class × within-class nearer/farther threshold-distance half; RandomState(8240). Ground-truth labels not used.",
+  "construction": "Rule-written descriptive explanations plus mixed-attribution and unsupported-intent controls. These are not model-native explanations or validated causal attributions.",
+  "blinding": "Judge has no true labels, addresses, local/global node IDs or construction-type key. Human reviews the same evidence before LLM responses. Project author cannot be fully blinded to the study purpose.",
+  "repetition": "Same chosen LLM, three fresh chats with independently shuffled presentation order. Repetitions are not three independent models; disagreement can reflect order and sampling variability.",
+  "analysis_plan": [
+    "Per-run rating proportions over all 24 items; keep descriptive texts and controls separate in secondary reporting.",
+    "Pairwise exact agreement and unweighted Cohen kappa between the three judge runs on the same 24 items.",
+    "Human-versus-each-run exact agreement and unweighted Cohen kappa on the fixed 12-item subset. One author human review is not multi-expert inter-annotator agreement.",
+    "Three-run majority agreement with human only where a unique majority exists; report ties explicitly.",
+    "Treat all summaries as exploratory; items within a case and templated controls are dependent. No classifier accuracy or mechanism claim from judge scores."
+  ],
+  "dataset_sha256": "e1c261e30ddc70266829f5eebae65fab0c3e67facc69b8da7bc2adfd4a39bbd9",
+  "primary_scores_sha256": "34c78566142afaf9cc30e253d7a1eefdb10ccedf2cb6cb4277372f1bc395bb16",
+  "generator_sha256": "9ce4704a69569020370100994bdeabfb2976da36f56b582e2c9d9d4225777fc4",
+  "human_item_ids": [
+    "J001",
+    "J004",
+    "J005",
+    "J006",
+    "J009",
+    "J012",
+    "J015",
+    "J018",
+    "J020",
+    "J022",
+    "J023",
+    "J024"
+  ],
+  "frozen_input_sha256": {
+    "BLINDED_CASES.json": "4b41bed894b31b92a8a55d3a7eef94728288b7e41694893fac0f6d10cef6ef6f",
+    "HUMAN_REVIEW.md": "b60627bf444fea653c56c95b04a38cb3dd51c90b1caef16668bb6a016a415304",
+    "JUDGE_RUN_1.md": "91f78c3b002768a5775b8ee05c40d26166c5bcfd716698411b74511054d20f52",
+    "JUDGE_RUN_2.md": "46e31c5f63589d844a963ab388944361e73fde432e781b04921b6d22a99fee1d",
+    "JUDGE_RUN_3.md": "cdf14806503518145a339f06f44027a1f2c2e9db20a29c5f1c28adcac9436dca",
+    "START_HERE_FA.md": "f10089bb5423c7d245394ab40a9efa551659eaec681d954282463a9b6db29ab5",
+    "human_ratings.csv": "cd508c38bd1b8d22c7ea6dc0e7c7fe1031d0195fcbb4e367ce6dc754b154855a",
+    "judge_run_1_response_TEMPLATE.json": "6dc0c9360a510070957c71d6d4aa0d9616e98e88b4d42603385328ef0719a751",
+    "judge_run_2_response_TEMPLATE.json": "6dc0c9360a510070957c71d6d4aa0d9616e98e88b4d42603385328ef0719a751",
+    "judge_run_3_response_TEMPLATE.json": "6dc0c9360a510070957c71d6d4aa0d9616e98e88b4d42603385328ef0719a751",
+    "run_metadata.csv": "e0f00dcef05cc655d6f6411429e7e70685bbbf65824cb770b531c95bc817c720"
+  }
+}
